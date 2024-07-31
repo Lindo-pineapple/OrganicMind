@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import styles from "../styles/HomePage.module.scss";
-import { useHref } from "react-router-dom";
+import Link from "next/link";
 
 const HomePage: React.FC = () => {
   return (
@@ -12,12 +12,15 @@ const HomePage: React.FC = () => {
             className={`w-100 h-100 d-flex align-items-center justify-content-center ${styles.bgImage}`}
           >
             <h1 className={`position-absolute top-0 start-0 p-3`}>
-              <span className={styles.leftCardTextTitle}>Organic</span>
-              <span
+              <Link href={"/"} className={styles.leftCardTextTitle}>
+                Organic
+              </Link>
+              <Link
+                href={"/"}
                 className={`position-absolute start-0 p-3 ${styles.leftCardText}`}
               >
                 Mind
-              </span>
+              </Link>
             </h1>
           </div>
         </Col>

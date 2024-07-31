@@ -28,15 +28,16 @@
   position: absolute;
   top: 20px;
   left: 20px;
+  display: block;
+  margin-top: 20px;
+  text-decoration: none;
+  color: white;
 }
 
 .leftCardTextTitle {
   display: block;
-}
-
-.leftCardText {
-  display: block;
-  margin-top: 20px;
+  text-decoration: none;
+  color: white;
 }
 
 .rightCard {

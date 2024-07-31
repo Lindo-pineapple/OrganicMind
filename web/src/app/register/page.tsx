@@ -1,7 +1,8 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import { Container, Row, Col, Button, Form } from "react-bootstrap";
 import styles from "../../styles/LoginPage.module.scss";
+import Link from "next/link";
 
 const LoginPage: React.FC = () => {
   const [buttonDisabled, setButtonDisabled] = useState(true);
@@ -13,12 +14,15 @@ const LoginPage: React.FC = () => {
             className={`w-100 h-100 d-flex align-items-center justify-content-center ${styles.bgImage}`}
           >
             <h1 className={`position-absolute top-0 start-0 p-3`}>
-              <span className={styles.leftCardTextTitle}>Organic</span>
-              <span
+              <Link href={"/"} className={styles.leftCardTextTitle}>
+                Organic
+              </Link>
+              <Link
+                href={"/"}
                 className={`position-absolute start-0 p-3 ${styles.leftCardText}`}
               >
                 Mind
-              </span>
+              </Link>
             </h1>
           </div>
         </Col>
@@ -31,8 +35,8 @@ const LoginPage: React.FC = () => {
             <div className={styles.cardContent}>
               <h2 className="mb-3 left-0">Sign up</h2>
               <Form className="w-100 mb-3">
-              <div className="mb-3">
-              <Form.Control
+                <div className="mb-3">
+                  <Form.Control
                     type="text"
                     className="form-control"
                     placeholder="YourName"
@@ -78,17 +82,11 @@ const LoginPage: React.FC = () => {
                 <hr className={`${styles.line}`} />
               </div>
               <div className="w-100 text-center d-flex justify-content-center align-items-center">
-                <Button
-                  variant="primary"
-                  className={`${styles.otherButton}`}
-                >
+                <Button variant="primary" className={`${styles.otherButton}`}>
                   Google
                 </Button>
-                <span style={{color: "white"}}>sp</span>
-                <Button
-                  variant="primary"
-                  className={`${styles.otherButton}`}
-                >
+                <span style={{ color: "white" }}>sp</span>
+                <Button variant="primary" className={`${styles.otherButton}`}>
                   Facebook
                 </Button>
               </div>
