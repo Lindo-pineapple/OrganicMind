@@ -1,3 +1,5 @@
+version: '3.8'
+
 services:
   web:
     build:
@@ -11,24 +13,13 @@ services:
     ports:
       - 3000:3000
     command: >
-      bash -c "cp -rfu /cache/node_modules/. /app/node_modules/  
-      && npm run dev"
-    develop:
-      context: ./web
-      watch:
-        - action: sync
-          path: ./web
-          target: /app
-          ignore:
-            - node_modules/
-        - action: rebuild
-          path: package.json
-    labels:
-      - "traefik.http.routers.frontend.rule=Host(`todoApp.com`)"
-      - "traefik.http.routers.frontend.entrypoints=web"
-      - "traefik.http.services.frontend.loadbalancer.server.port=3000"
+      bash -c "cp -rfu /cache/node_modules/. /app/node_modules/   && npm run dev"
+    environment:
+      - SERVER_URI=http://server:5001
     depends_on:
       - server
+    networks:
+      - organicmind-network
 
   server:
     build:
@@ -42,29 +33,15 @@ services:
     ports:
       - 5001:5001
     command: >
-      bash -c "cp -rfu /cache/node_modules/. /app/node_modules/  
-      && npm start"
-    develop:
-      context: ./server
-      watch:
-        - action: sync
-          path: ./server
-          target: /app
-          ignore:
-            - node_modules/
-        - action: rebuild
-          path: package.json
-    labels:
-      - "traefik.http.routers.backend.rule=Host(`server.todoApp.com`)"
-      - "traefik.http.routers.backend.entrypoints=websecure"
-      - "traefik.http.routers.backend.tls=true"
-      - "traefik.http.services.backend.loadbalancer.server.port=5001"
+      bash -c "cp -rfu /cache/node_modules/. /app/node_modules/   && npm start"
     environment:
-      - MONGO_URI=mongodb://mongo:27017/
+      - MONGO_URI=mongodb://mongo:27017/todoApp
       - REDIS_URL=redis://redis:6379
     depends_on:
       - mongo
       - redis
+    networks:
+      - organicmind-network
 
   mongo:
     image: mongo:latest
@@ -73,12 +50,16 @@ services:
       - mongo-data:/data/db
     ports:
       - 27017:27017
+    networks:
+      - organicmind-network
 
   redis:
     image: redis:latest
     container_name: redis
     ports:
       - 6379:6379
+    networks:
+      - organicmind-network
 
   traefik:
     image: traefik:v2.5
@@ -92,12 +73,14 @@ services:
       - "--certificatesresolvers.myresolver.acme.email=your-email@todoApp.com"
       - "--certificatesresolvers.myresolver.acme.storage=/letsencrypt/acme.json"
     ports:
-      - 80:80        # HTTP
-      - 443:443       # HTTPS
-      - 8080:8080     # Dashboard
+      - 80:80 # HTTP
+      - 443:443 # HTTPS
+      - 8080:8080 # Dashboard
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock"
       - "traefik-certificates:/letsencrypt"
+    networks:
+      - organicmind-network
 
   mongo-express:
     image: mongo-express
@@ -111,27 +94,32 @@ services:
       - 8081:8081
     depends_on:
       - mongo
+    networks:
+      - organicmind-network
+
+networks:
+  organicmind-network:
+    driver: bridge
 
 volumes:
   mongo-data:
   traefik-certificates:
 
+    # Explanation
+    # Traefik Configuration:
 
-# Explanation
-# Traefik Configuration:
+    # Traefik Service: Added the Traefik service with configuration to handle HTTP (port 80) and HTTPS (port 443) traffic. It also has a dashboard available on port 8080.
+    # ACME Configuration: Handles automatic SSL certificate management with Let's Encrypt.
+    # Frontend and Backend Services:
 
-# Traefik Service: Added the Traefik service with configuration to handle HTTP (port 80) and HTTPS (port 443) traffic. It also has a dashboard available on port 8080.
-# ACME Configuration: Handles automatic SSL certificate management with Let's Encrypt.
-# Frontend and Backend Services:
+    # Labels: Added Traefik labels to configure routing rules.
+    # Frontend: Accessible via example.com, listening on HTTP.
+    # Backend: Accessible via api.example.com, with HTTPS enabled.
+    # Volumes:
 
-# Labels: Added Traefik labels to configure routing rules.
-# Frontend: Accessible via example.com, listening on HTTP.
-# Backend: Accessible via api.example.com, with HTTPS enabled.
-# Volumes:
-
-# traefik-certificates: Volume for storing the certificates managed by Traefik.
-# Notes
-# Replace example.com and api.example.com: Update these placeholders with your actual domain names.
-# ACME Email: Replace your-email@example.com with your actual email address for certificate management.
-# NGINX Replacement: The NGINX service has been removed and replaced with Traefik.
-# This configuration sets up Traefik as the entry point for all HTTP and HTTPS traffic, automatically managing SSL/TLS certificates and routing requests to your frontend and backend services based on the specified rules.
+    # traefik-certificates: Volume for storing the certificates managed by Traefik.
+    # Notes
+    # Replace example.com and api.example.com: Update these placeholders with your actual domain names.
+    # ACME Email: Replace your-email@example.com with your actual email address for certificate management.
+    # NGINX Replacement: The NGINX service has been removed and replaced with Traefik.
+    # This configuration sets up Traefik as the entry point for all HTTP and HTTPS traffic, automatically managing SSL/TLS certificates and routing requests to your frontend and backend services based on the specified rules.

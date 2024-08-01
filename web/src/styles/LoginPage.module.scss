@@ -82,7 +82,6 @@
 
 .loginButton {
   width: 100%;
-  height: 5%;
   color: black;
   background-color: gold;
   border-color: gold;
@@ -90,7 +89,6 @@
 
 .loginButton:disabled {
   width: 100%;
-  height: 5%;
   color: black;
   background-color: rgb(228, 228, 228);
   border-color: rgb(228, 228, 228);
@@ -102,11 +100,20 @@
 }
 
 .line {
-  clear:both;
-  display:block;
-  width: 45%;               
-  background-color:#FFFF00;
-  height: 1px;
+  display: inline-block; /* Allows the <hr> to fit its content */
+  width: 45%;             /* Adjusts width relative to the parent container */
+  background-color: rgb(114, 112, 112); /* Color of the line */
+  color: rgb(114, 112, 112);
+  height: 1px;            /* Height of the line */
+  border: none;           /* Removes default border */
+}
+
+.lineContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center; /* Ensure text alignment */
+  width: 100%;
 }
 
 .otherButton {
@@ -133,6 +140,6 @@
   }
 
   .leftCardText {
-    // position: static;
+    position: static;
   }
 }

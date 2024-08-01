@@ -7,6 +7,7 @@ import logger from "./src/utilities/logger.js";
 import swaggerSpec from "./src/utilities/swagger.js";
 import { API, HTTP_CODES } from "./src/globals.js";
 import routes from "./src/routes/routes.js";
+import cors from  'cors';
 
 const app = express();
 
@@ -23,6 +24,10 @@ mongoose.connect(API.DB_STRING).then(
 
     app.use(json());
     app.use(morgan("dev"));
+    app.options('*', cors()); // handle preflight requests
+    app.use(cors({
+      origin: 'http://localhost:3000'
+    }));
 
     //Create a session for User Auth
     app.use(
@@ -41,7 +46,7 @@ mongoose.connect(API.DB_STRING).then(
     app.use(routes);
 
     // health check at root
-    app.get("/", (req, res) => {
+    app.get("/health", (req, res) => {
       if (mongoose.connection.readyState === 1) {
         return res.status(200).send(serviceName);
       }

@@ -6,7 +6,7 @@ FROM node:${NODE_VERSION}
 WORKDIR /cache
 
 # # Copy package.json and package-lock.json into the working directory
-# COPY package*.json ./cache
+COPY package*.json .
 
 # install app dependencies and mount to cache to speed up subsequent builds.
 RUN --mount=type=bind,source=package.json,target=package.json \
