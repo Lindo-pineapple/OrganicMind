@@ -1,0 +1,147 @@
+.sideMenu {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Full height of the viewport */
+    width: 25%; /* Default width for desktop */
+  
+    @media (max-width: 768px) {
+      width: 40%; /* Width for tablets */
+    }
+  
+    @media (max-width: 576px) {
+      width: 100%; /* Full width for mobile */
+    }
+  
+    /* Remove the default backdrop */
+    .offcanvas-backdrop {
+      display: none !important;
+    }
+  }
+  
+  .offcanvas-body {
+    flex: 1; /* Take up available space */
+    padding: 0;
+  }
+  
+  .searchBar {
+    position: relative;
+    margin-bottom: 20px; /* Add margin if needed */
+  }
+  
+  .searchInput {
+    padding-left: 30px; /* Space for the search icon */
+  }
+  
+  .searchIcon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6c757d; /* Optional: Adjust color if needed */
+  }
+  
+  .navSection {
+    margin-bottom: 30px; /* Increase spacing between sections */
+  }
+  
+  .sectionTitle {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+  }
+  
+  .navGroup {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .navItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distribute space between text and badge */
+    padding: 10px;
+    border: none; /* Remove border */
+    position: relative; /* For badge positioning */
+  }
+  
+  .navIcon {
+    margin-right: 10px; /* Space between icon and text */
+  }
+  
+  .navText {
+    flex: 1; /* Take up available space to push badge to the right */
+    display: flex;
+    align-items: center;
+  }
+  
+  .badge {
+    position: absolute;
+    right: 10px; /* Adjust this value as needed */
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #b1b1b2;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 10%;
+    font-size: 0.75rem;
+    font-weight: bold;
+  }
+  
+  .tagContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Space between tags */
+  }
+  
+  .tag {
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    text-align: center;
+    font-size: small;
+    padding: 0; /* Remove default padding */
+    background-color: transparent; /* Remove default background */
+  }
+  
+  .addTag {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(202, 198, 198);
+    width: 120px;
+    font-weight: bold;
+  }
+  
+  .menuFooter {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin-top: auto; /* Pushes the footer to the bottom */
+  }
+  
+  .menuButton {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 10px 15px; /* Add padding as needed */
+    margin-bottom: 10px;
+    text-align: left; /* Align text to the left */
+    border: none; /* Remove border */
+  }
+  
+  .menuIcon {
+    margin-right: 10px;
+  }
+  
+  .closeButton {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background: none; /* Remove default button background */
+    border: none; /* Remove default button border */
+    color: #6c757d; /* Adjust color if needed */
+  }
+  
