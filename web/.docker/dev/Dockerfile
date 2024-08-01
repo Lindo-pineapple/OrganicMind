@@ -6,7 +6,7 @@ FROM node:${NODE_VERSION}
 WORKDIR /cache
 
 # # Copy package.json and package-lock.json into the working directory
-# COPY package*.json .
+COPY package*.json .
 
 # install app dependencies and mount to cache to speed up subsequent builds.
 RUN --mount=type=bind,source=package.json,target=package.json \
@@ -18,6 +18,7 @@ RUN --mount=type=bind,source=package.json,target=package.json \
 WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
 COPY . .
+ENV SERVER_URI=http://host.docker.internal:5001
 
 # Run the application as a non-root user.
 RUN  chown -R node /app

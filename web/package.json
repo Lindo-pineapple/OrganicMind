@@ -14,6 +14,7 @@
     "@fortawesome/react-fontawesome": "^0.2.2",
     "autoprefixer": "^10.4.19",
     "bootstrap": "^5.3.3",
+    "dotenv": "^16.4.5",
     "grommet": "^2.39.0",
     "grommet-icons": "^4.12.1",
     "next": "14.2.5",

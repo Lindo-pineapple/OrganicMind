@@ -1,9 +1,24 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import styles from "../styles/HomePage.module.scss";
 import Link from "next/link";
+import { healthCheck } from "@/api/users"; // Make sure this path is correct
 
 const HomePage: React.FC = () => {
+  useEffect(() => {
+    const performHealthCheck = async () => {
+      try {
+        const result = await healthCheck();
+        console.log("Health Check Result:", result);
+      } catch (error) {
+        console.error("Health Check Error:", error);
+      }
+    };
+
+    performHealthCheck();
+  }, []);
+
   return (
     <Container fluid className={`p-0 m-0 vh-100 ${styles.main}`}>
       <Row className="h-100 mx-0">

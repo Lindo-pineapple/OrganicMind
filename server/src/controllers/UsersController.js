@@ -6,10 +6,10 @@ import User from "../models/UserModel.js";
 const AuthSecret = process.env.AUTH_SECRET;
 
 export async function login(req, res) {
-  const { username, password } = req.body;
-  const user = await User.findOne({ username: username });
+  const { email, password } = req.body;
+  const user = await User.findOne({ email: email });
   if (!user || !compareSync(password, user.password)) {
-    return res.status(401).send("Invalid username or password.");
+    return res.status(401).send("Invalid email or password.");
   }
   const token = pkg.sign({ id: user._id }, AuthSecret, { expiresIn: "30m" });
   res.status(HTTP_CODES.OK).send({ response: user, token: token });
