@@ -1,8 +1,11 @@
 .sideMenu {
     display: flex;
     flex-direction: column;
-    height: 100vh; /* Full height of the viewport */
+    height: 96vh; /* Full height of the viewport */
     width: 25%; /* Default width for desktop */
+    background-color: #f4f4f4;
+    border-radius: 2%;
+    margin: 20px;
   
     @media (max-width: 768px) {
       width: 40%; /* Width for tablets */
@@ -39,9 +42,18 @@
     transform: translateY(-50%);
     color: #6c757d; /* Optional: Adjust color if needed */
   }
+
+  .line {
+    display: inline-block; /* Allows the <hr> to fit its content */
+    width: 98%;             /* Adjusts width relative to the parent container */
+    background-color: rgb(213, 210, 210); /* Color of the line */
+    height: 2px;            /* Height of the line */
+    border: none;          /* Removes default border */
+  }
   
   .navSection {
-    margin-bottom: 30px; /* Increase spacing between sections */
+    margin-bottom: 20px; /* Increase spacing between sections */
+    margin-top: 10px;
   }
   
   .sectionTitle {
@@ -61,6 +73,7 @@
     padding: 10px;
     border: none; /* Remove border */
     position: relative; /* For badge positioning */
+    background-color: rgba(255, 0, 0, 0);
   }
   
   .navIcon {
@@ -130,6 +143,7 @@
     margin-bottom: 10px;
     text-align: left; /* Align text to the left */
     border: none; /* Remove border */
+    background-color: rgba(240, 255, 255, 0);
   }
   
   .menuIcon {

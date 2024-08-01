@@ -15,7 +15,7 @@ const Main: React.FC = () => {
     <div className={styles.mainContentWrapper}>
       {/* Menu toggle button */}
       <div className={styles.menuToggle} onClick={handleShow}>
-        <FaBars size={24} />
+        <FaBars size={20} />
       </div>
 
       <SideMenu show={showMenu} handleClose={handleClose} listProps={{

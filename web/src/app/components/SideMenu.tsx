@@ -10,7 +10,7 @@ import {
   FaStickyNote,
   FaPlus,
   FaSquare,
-  FaTimes,
+  FaBars,
 } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import styles from "@/styles/SideMenu.module.scss";
@@ -63,7 +63,7 @@ const SideMenu: React.FC<SideMenuProps> = ({
           className={styles.closeButton}
           onClick={handleClose}
         >
-          <FaTimes size={24} />
+          <FaBars size={24} />
         </Button>
       </Offcanvas.Header>
       <Offcanvas.Body className={styles.offcanvasBody}>
@@ -118,6 +118,10 @@ const SideMenu: React.FC<SideMenuProps> = ({
           </div>
         </div>
 
+        <hr
+          className={`justify-content-center align-items-center ${styles.line}`}
+        />
+
         {/* Lists Section */}
         <div className={styles.navSection}>
           <h5 className={styles.sectionTitle}>Lists</h5>
@@ -169,6 +173,10 @@ const SideMenu: React.FC<SideMenuProps> = ({
           </div>
         </div>
 
+        <hr
+          className={`justify-content-center align-items-center ${styles.line}`}
+        />
+
         {/* Tags Section */}
         <div className={styles.navSection}>
           <h5 className={styles.sectionTitle}>Tags</h5>
@@ -177,7 +185,7 @@ const SideMenu: React.FC<SideMenuProps> = ({
               variant="light"
               className={styles.tag}
               onClick={() => navigateTo("/tag1")}
-              style={{backgroundColor: "lightblue"}}
+              style={{ backgroundColor: "lightblue" }}
             >
               Tag 1
             </Button>
@@ -185,7 +193,7 @@ const SideMenu: React.FC<SideMenuProps> = ({
               variant="light"
               className={styles.tag}
               onClick={() => navigateTo("/tag2")}
-              style={{backgroundColor: "pink"}}
+              style={{ backgroundColor: "pink" }}
             >
               Tag 2
             </Button>
