@@ -79,7 +79,7 @@ const SideMenu: React.FC<SideMenuProps> = ({
 
         {/* Tasks Section */}
         <div className={styles.navSection}>
-          <h5 className={styles.sectionTitle}>Tasks</h5>
+          <h5 className={styles.sectionTitle}>TASKS</h5>
           <div className={styles.navGroup}>
             <Button
               variant="light"
@@ -124,7 +124,7 @@ const SideMenu: React.FC<SideMenuProps> = ({
 
         {/* Lists Section */}
         <div className={styles.navSection}>
-          <h5 className={styles.sectionTitle}>Lists</h5>
+          <h5 className={styles.sectionTitle}>LISTS</h5>
           <div className={styles.navGroup}>
             <Button
               variant="light"
@@ -179,7 +179,7 @@ const SideMenu: React.FC<SideMenuProps> = ({
 
         {/* Tags Section */}
         <div className={styles.navSection}>
-          <h5 className={styles.sectionTitle}>Tags</h5>
+          <h5 className={styles.sectionTitle}>TAGS</h5>
           <div className={styles.tagContainer}>
             <Button
               variant="light"
