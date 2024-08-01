@@ -5,7 +5,7 @@ const router = Router();
 
 /**
  * @swagger
- * /users/login:
+ * /user/login:
  *   post:
  *     summary: User Login
  *     tags: [Users]
@@ -14,21 +14,20 @@ const router = Router();
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/Users'
+ *             $ref: '#/components/schemas/User'
  *     responses:
  *       201:
  *         description: User Logged in successfully
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Users'
+ *               $ref: '#/components/schemas/User'
  */
 router.post('/login', login);
 
-
 /**
  * @swagger
- * /users/register:
+ * /user/register:
  *   post:
  *     summary: Register a new User
  *     tags: [Users]
@@ -37,38 +36,30 @@ router.post('/login', login);
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/Users'
+ *             $ref: '#/components/schemas/User'
  *     responses:
  *       201:
  *         description: User registered successfully
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Users'
+ *               $ref: '#/components/schemas/User'
  */
 router.post('/register', register);
 
-
 /**
  * @swagger
- * /users/me/{id}:
+ * /user/me:
  *   get:
  *     summary: Get the current User
  *     tags: [Users]
- *     parameters:
- *       - in: path
- *         name: id
- *         schema:
- *           type: integer
- *         required: true
- *         description: Numeric ID of the User to retrieve
  *     responses:
  *       200:
  *         description: Current User
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Users'
+ *               $ref: '#/components/schemas/User'
  */
 router.get('/me', getCurrentUser);
 

@@ -15,30 +15,30 @@ const router = Router();
  * /todos:
  *   post:
  *     summary: Create a new Todo
- *     tags: [todos]
+ *     tags: [Todos]
  *     requestBody:
  *       required: true
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/todos'
+ *             $ref: '#/components/schemas/Todo'
  *     responses:
  *       201:
  *         description: Todo created successfully
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/todos'
+ *               $ref: '#/components/schemas/Todo'
  */
 router.post("/", createTodo);
 
-//Get all Todo's
+//Get all Todos
 /**
  * @swagger
  * /todos:
  *   get:
  *     summary: Retrieve a list of all todos
- *     tags: [todos]
+ *     tags: [Todos]
  *     responses:
  *       200:
  *         description: A list of todos
@@ -47,7 +47,7 @@ router.post("/", createTodo);
  *             schema:
  *               type: array
  *               items:
- *                 $ref: '#/components/schemas/todos'
+ *                 $ref: '#/components/schemas/Todo'
  */
 router.get("/", getTodos);
 
@@ -57,7 +57,7 @@ router.get("/", getTodos);
  * /todos/{id}:
  *   get:
  *     summary: Retrieve details of a specific todo
- *     tags: [todos]
+ *     tags: [Todos]
  *     parameters:
  *       - in: path
  *         name: id
@@ -71,7 +71,7 @@ router.get("/", getTodos);
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/todos'
+ *               $ref: '#/components/schemas/Todo'
  */
 router.get("/:id", getTodo);
 
@@ -81,12 +81,12 @@ router.get("/:id", getTodo);
  * /todos/{id}:
  *   put:
  *     summary: Update todo information
- *     tags: [todos]
+ *     tags: [Todos]
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
- *           type: string
+ *           type: integer
  *         required: true
  *         description: ID of the todo to update
  *     requestBody:
@@ -94,16 +94,16 @@ router.get("/:id", getTodo);
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/todos'
+ *             $ref: '#/components/schemas/Todo'
  *     responses:
  *       200:
- *         description: todo updated successfully
+ *         description: Todo updated successfully
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/todos'
+ *               $ref: '#/components/schemas/Todo'
  */
-router.patch("/update/:id", updateTodo);
+router.patch("/:id", updateTodo);
 
 //Delete Todo by ID
 /**
@@ -111,18 +111,18 @@ router.patch("/update/:id", updateTodo);
  * /todos/{id}:
  *   delete:
  *     summary: Delete a todo
- *     tags: [todos]
+ *     tags: [Todos]
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
- *           type: string
+ *           type: integer
  *         required: true
  *         description: ID of the todo to delete
  *     responses:
  *       200:
  *         description: Todo deleted successfully
  */
-router.delete("/delete/:id", deleteTodo);
+router.delete("/:id", deleteTodo);
 
 export default router;
