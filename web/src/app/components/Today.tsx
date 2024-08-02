@@ -5,7 +5,7 @@ import { Container } from "react-bootstrap";
 const Today: React.FC = () => {
   return (
     <div
-      style={{ backgroundColor: "red", width: "100%", height: "100%" }}
+      style={{ backgroundColor: "red"}}
       className={`container`}
     >
       <h1>Today</h1>

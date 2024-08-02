@@ -12,8 +12,8 @@ import Upcoming from "../components/Upcoming";
 const Main: React.FC = () => {
   const [showMenu, setShowMenu] = useState(false);
 
-  const [showToday, setShowToday] = useState(false);
-  const [showUpcoming, setShowUpcoming] = useState(true);
+  const [showToday, setShowToday] = useState(true);
+  const [showUpcoming, setShowUpcoming] = useState(false);
   const [showCalendar, setShowCalendar] = useState(false);
   const [showStickyWall, setShowStickyWall] = useState(false);
 
