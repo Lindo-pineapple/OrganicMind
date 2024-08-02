@@ -33,6 +33,7 @@
   
   .searchInput {
     padding-left: 30px; /* Space for the search icon */
+    background-color: #e8e8e800;
   }
   
   .searchIcon {
@@ -77,9 +78,9 @@
     color: black;
     background-color: rgba(255, 0, 0, 0);
 
-    // &:active {
-    //   background-color: #ff5733 !important; // Custom active background color
-    // }
+    &.active {
+      background-color: #e8e8e8; // Custom active background color
+    }
   }
 
   .navIcon {
@@ -98,12 +99,20 @@
     right: 10px; /* Adjust this value as needed */
     top: 50%;
     transform: translateY(-50%);
-    background-color: #b1b1b2;
+    background-color: #e8e8e8;
     color: black;
-    padding: 5px 10px;
-    border-radius: 10%;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    width: 10%;
+    height: 50%;
     font-size: 0.75rem;
     font-weight: bold;
+    border-radius: 5px;
+
+    &.active {
+      background-color: white; // Custom active background color
+    }
   }
   
   .tagContainer {

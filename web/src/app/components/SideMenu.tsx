@@ -79,36 +79,54 @@ const SideMenu: React.FC<SideMenuProps> = ({
                 changePage("Upcoming");
                 setActive("Upcoming");
               }}
-              className={`${styles.navItem}`}
-              active={active=="Upcoming"}
+              className={`${styles.navItem} ${
+                active == "Upcoming" ? styles.active : ""
+              }`}
+              active={active == "Upcoming"}
             >
               <FaArrowAltCircleRight className={styles.navIcon} />
               <div className={styles.navText}>Upcoming</div>
-              <span className={styles.badge}>12</span>
+              <span
+                className={`${styles.badge} ${
+                  active == "Upcoming" ? styles.active : ""
+                }`}
+              >
+                12
+              </span>
             </Button>
 
             <Button
               variant="light"
-              className={styles.navItem}
+              className={`${styles.navItem} ${
+                active == "Today" ? styles.active : ""
+              }`}
               onClick={() => {
                 changePage("Today");
                 setActive("Today");
               }}
-              active={active=="Today"}
+              active={active == "Today"}
             >
               <FaList className={styles.navIcon} />
               <div className={styles.navText}>Today</div>
-              <span className={styles.badge}>5</span>
+              <span
+                className={`${styles.badge} ${
+                  active == "Today" ? styles.active : ""
+                }`}
+              >
+                5
+              </span>
             </Button>
 
             <Button
               variant="light"
-              className={styles.navItem}
+              className={`${styles.navItem} ${
+                active == "Calendar" ? styles.active : ""
+              }`}
               onClick={() => {
                 changePage("Calendar");
                 setActive("Calendar");
               }}
-              active={active=="Calendar"}
+              active={active == "Calendar"}
             >
               <FaCalendarAlt className={styles.navIcon} />
               <div className={styles.navText}>Calendar</div>
@@ -116,12 +134,14 @@ const SideMenu: React.FC<SideMenuProps> = ({
 
             <Button
               variant="light"
-              className={styles.navItem}
+              className={`${styles.navItem} ${
+                active == "StickyWall" ? styles.active : ""
+              }`}
               onClick={() => {
                 changePage("StickyWall");
                 setActive("StickyWall");
               }}
-              active={active=="StickyWall"}
+              active={active == "StickyWall"}
             >
               <FaStickyNote className={styles.navIcon} />
               <div className={styles.navText}>Sticky Wall</div>
@@ -139,57 +159,83 @@ const SideMenu: React.FC<SideMenuProps> = ({
           <div className={styles.navGroup}>
             <Button
               variant="light"
-              className={styles.navItem}
+              className={`${styles.navItem} ${
+                active == "Personal" ? styles.active : ""
+              }`}
               onClick={() => {
                 changePage("Filters");
                 setActive("Personal");
               }}
-              active={active=="Personal"}
+              active={active == "Personal"}
             >
               <FaSquare className={styles.navIcon} style={{ color: "red" }} />
               <div className={styles.navText}>Personal</div>
-              <span className={styles.badge}>3</span>
+              <span
+                className={`${styles.badge} ${
+                  active == "Personal" ? styles.active : ""
+                }`}
+              >
+                3
+              </span>
             </Button>
 
             <Button
               variant="light"
-              className={styles.navItem}
+              className={`${styles.navItem} ${
+                active == "Work" ? styles.active : ""
+              }`}
               onClick={() => {
                 changePage("Filters");
                 setActive("Work");
               }}
-              active={active=="Work"}
+              active={active == "Work"}
             >
               <FaSquare
                 className={styles.navIcon}
                 style={{ color: "lightblue" }}
               />
               <div className={styles.navText}>Work</div>
-              <span className={styles.badge}>6</span>
+              <span
+                className={`${styles.badge} ${
+                  active == "Work" ? styles.active : ""
+                }`}
+              >
+                6
+              </span>
             </Button>
 
             <Button
               variant="light"
-              className={styles.navItem}
+              className={`${styles.navItem} ${
+                active == "List1" ? styles.active : ""
+              }`}
               onClick={() => {
                 changePage("Filters");
                 setActive("List1");
               }}
-              active={active=="List1"}
+              active={active == "List1"}
             >
               <FaSquare className={styles.navIcon} style={{ color: "gold" }} />
               <div className={styles.navText}>List1</div>
-              <span className={styles.badge}>1</span>
+              <span
+                className={`${styles.badge} ${
+                  active == "List1" ? styles.active : ""
+                }`}
+              >
+                1
+              </span>
             </Button>
 
             <Button
               variant="light"
-              className={styles.navItem}
+              className={`${styles.navItem} ${
+                active == "AddNew" ? styles.active : ""
+              }`}
               onClick={() => {
                 changePage("Filters");
                 setActive("AddNew");
               }}
-              active={active=="AddNew"}
+              active={active == "AddNew"}
             >
               <FaPlus className={styles.navIcon} />
               <div className={styles.navText}>Add New List</div>
@@ -238,7 +284,6 @@ const SideMenu: React.FC<SideMenuProps> = ({
             </Button>
           </div>
         </div>
-
       </Offcanvas.Body>
       <div className={styles.menuFooter}>
         {/* Menu items */}
@@ -257,7 +302,6 @@ const SideMenu: React.FC<SideMenuProps> = ({
         >
           <FaSignOutAlt className={styles.menuIcon} /> Sign Out
         </Button>
-
       </div>
     </Offcanvas>
   );
