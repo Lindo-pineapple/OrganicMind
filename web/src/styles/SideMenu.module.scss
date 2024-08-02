@@ -74,9 +74,14 @@
     padding: 10px;
     border: none; /* Remove border */
     position: relative; /* For badge positioning */
+    color: black;
     background-color: rgba(255, 0, 0, 0);
+
+    // &:active {
+    //   background-color: #ff5733 !important; // Custom active background color
+    // }
   }
-  
+
   .navIcon {
     margin-right: 10px; /* Space between icon and text */
   }
@@ -85,6 +90,7 @@
     flex: 1; /* Take up available space to push badge to the right */
     display: flex;
     align-items: center;
+    margin-left: 10px;
   }
   
   .badge {

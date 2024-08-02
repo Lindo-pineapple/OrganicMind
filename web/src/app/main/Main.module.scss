@@ -13,13 +13,24 @@
   width: 5%;
   height: 100%;
   justify-content: center;
-  padding-top: 1%;
+  padding-top: 30px;
+}
+
+.openButton {
+  position: absolute;
+  background: none; /* Remove default button background */
+  border: none; /* Remove default button border */
+  color: #6c757d; /* Adjust color if needed */
 }
 
 .mainContent {
   // width: 95%;
   height: 100%;
   background-color: goldenrod;
-  margin: 0%;
-  padding: 0%;
+  margin-left: 30px;
+  padding-top: 20px;
+}
+
+.mainContent.close {
+  background-color: aqua;
 }

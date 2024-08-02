@@ -18,11 +18,17 @@ import styles from "@/styles/SideMenu.module.scss";
 interface SideMenuProps {
   show: boolean;
   handleClose: () => void;
+  changePage: (page: string) => void;
 }
 
-const SideMenu: React.FC<SideMenuProps> = ({ show, handleClose }) => {
+const SideMenu: React.FC<SideMenuProps> = ({
+  show,
+  handleClose,
+  changePage,
+}) => {
   const router = useRouter();
   const [isTabletOrMobile, setIsTabletOrMobile] = useState(false);
+  const [active, setActive] = useState("Today");
 
   useEffect(() => {
     const handleResize = () => {
@@ -33,18 +39,13 @@ const SideMenu: React.FC<SideMenuProps> = ({ show, handleClose }) => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const navigateTo = (path: string) => {
-    router.push(path);
-    handleClose();
-  };
-
   return (
     <Offcanvas
       show={show}
       onHide={handleClose}
       placement="start"
       className={styles.sideMenu}
-      style={{ backdropFilter: "none"}}      
+      style={{ backdropFilter: "none" }}
       backdrop={false}
     >
       <Offcanvas.Header>
@@ -74,34 +75,53 @@ const SideMenu: React.FC<SideMenuProps> = ({ show, handleClose }) => {
           <div className={styles.navGroup}>
             <Button
               variant="light"
-              className={styles.navItem}
-              // onClick={() => navigateTo("/upcoming")}
+              onClick={() => {
+                changePage("Upcoming");
+                setActive("Upcoming");
+              }}
+              className={`${styles.navItem}`}
+              active={active=="Upcoming"}
             >
               <FaArrowAltCircleRight className={styles.navIcon} />
               <div className={styles.navText}>Upcoming</div>
               <span className={styles.badge}>12</span>
             </Button>
+
             <Button
               variant="light"
               className={styles.navItem}
-              // onClick={() => navigateTo("/today")}
+              onClick={() => {
+                changePage("Today");
+                setActive("Today");
+              }}
+              active={active=="Today"}
             >
               <FaList className={styles.navIcon} />
               <div className={styles.navText}>Today</div>
               <span className={styles.badge}>5</span>
             </Button>
+
             <Button
               variant="light"
               className={styles.navItem}
-              // onClick={() => navigateTo("/calendar")}
+              onClick={() => {
+                changePage("Calendar");
+                setActive("Calendar");
+              }}
+              active={active=="Calendar"}
             >
               <FaCalendarAlt className={styles.navIcon} />
               <div className={styles.navText}>Calendar</div>
             </Button>
+
             <Button
               variant="light"
               className={styles.navItem}
-              // onClick={() => navigateTo("/sticky-wall")}
+              onClick={() => {
+                changePage("StickyWall");
+                setActive("StickyWall");
+              }}
+              active={active=="StickyWall"}
             >
               <FaStickyNote className={styles.navIcon} />
               <div className={styles.navText}>Sticky Wall</div>
@@ -120,16 +140,25 @@ const SideMenu: React.FC<SideMenuProps> = ({ show, handleClose }) => {
             <Button
               variant="light"
               className={styles.navItem}
-              onClick={() => navigateTo("/personal")}
+              onClick={() => {
+                changePage("Filters");
+                setActive("Personal");
+              }}
+              active={active=="Personal"}
             >
               <FaSquare className={styles.navIcon} style={{ color: "red" }} />
               <div className={styles.navText}>Personal</div>
               <span className={styles.badge}>3</span>
             </Button>
+
             <Button
               variant="light"
               className={styles.navItem}
-              onClick={() => navigateTo("/work")}
+              onClick={() => {
+                changePage("Filters");
+                setActive("Work");
+              }}
+              active={active=="Work"}
             >
               <FaSquare
                 className={styles.navIcon}
@@ -138,19 +167,29 @@ const SideMenu: React.FC<SideMenuProps> = ({ show, handleClose }) => {
               <div className={styles.navText}>Work</div>
               <span className={styles.badge}>6</span>
             </Button>
+
             <Button
               variant="light"
               className={styles.navItem}
-              onClick={() => navigateTo("/list1")}
+              onClick={() => {
+                changePage("Filters");
+                setActive("List1");
+              }}
+              active={active=="List1"}
             >
               <FaSquare className={styles.navIcon} style={{ color: "gold" }} />
               <div className={styles.navText}>List1</div>
               <span className={styles.badge}>1</span>
             </Button>
+
             <Button
               variant="light"
               className={styles.navItem}
-              onClick={() => navigateTo("/add-new-list")}
+              onClick={() => {
+                changePage("Filters");
+                setActive("AddNew");
+              }}
+              active={active=="AddNew"}
             >
               <FaPlus className={styles.navIcon} />
               <div className={styles.navText}>Add New List</div>
@@ -169,45 +208,56 @@ const SideMenu: React.FC<SideMenuProps> = ({ show, handleClose }) => {
             <Button
               variant="light"
               className={styles.tag}
-              onClick={() => navigateTo("/tag1")}
+              onClick={() => {
+                changePage("Filters");
+              }}
               style={{ backgroundColor: "lightblue" }}
             >
               Tag 1
             </Button>
+
             <Button
               variant="light"
               className={styles.tag}
-              onClick={() => navigateTo("/tag2")}
+              onClick={() => {
+                changePage("Filters");
+              }}
               style={{ backgroundColor: "pink" }}
             >
               Tag 2
             </Button>
+
             <Button
               variant="light"
               className={`${styles.tag} ${styles.addTag}`}
-              onClick={() => navigateTo("/add-tag")}
+              onClick={() => {
+                changePage("Filters");
+              }}
             >
               + Add Tag
             </Button>
           </div>
         </div>
+
       </Offcanvas.Body>
       <div className={styles.menuFooter}>
         {/* Menu items */}
         <Button
           variant="light"
           className={styles.menuButton}
-          onClick={() => navigateTo("/settings")}
+          onClick={() => router.push("/settings")}
         >
           <FaCog className={styles.menuIcon} /> Settings
         </Button>
+
         <Button
           variant="light"
           className={styles.menuButton}
-          onClick={() => navigateTo("/signout")}
+          onClick={() => router.push("/signout")}
         >
           <FaSignOutAlt className={styles.menuIcon} /> Sign Out
         </Button>
+
       </div>
     </Offcanvas>
   );

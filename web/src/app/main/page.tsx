@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { Container } from "react-bootstrap";
+import { Button, Container } from "react-bootstrap";
 import SideMenu from "../components/SideMenu";
 import styles from "./Main.module.scss";
 import { FaBars } from "react-icons/fa";
@@ -12,25 +12,35 @@ import Upcoming from "../components/Upcoming";
 const Main: React.FC = () => {
   const [showMenu, setShowMenu] = useState(false);
 
-  const [showToday, setShowToday] = useState(true);
-  const [showUpcoming, setShowUpcoming] = useState(false);
-  const [showCalendar, setShowCalendar] = useState(false);
-  const [showStickyWall, setShowStickyWall] = useState(false);
+  //page state
+  const [currentPage, setCurrentPage] = useState('Today');
+
+  function changePage(page: string){
+    setCurrentPage(page);
+  }
 
   const handleShow = () => setShowMenu(true);
   const handleClose = () => setShowMenu(false);
 
   return (
     <div className={`${styles.mainContentWrapper}`}>
-      <div className={styles.menuToggle} onClick={handleShow}>
-        <FaBars size={20} />
+      <div className={styles.menuToggle}>
+        <Button
+          variant="link"
+          className={styles.openButton}
+          onClick={handleShow}
+        >
+          <FaBars size={20} />
+        </Button>
       </div>
-      <SideMenu show={showMenu} handleClose={handleClose} />
-      <div className={`${styles.mainContent}`}>
-        {showToday && <Today />}
-        {showUpcoming && <Upcoming />}
-        {showCalendar && <Calendar />}
-        {showStickyWall && <StickyWall />}
+
+      <SideMenu show={showMenu} handleClose={handleClose} changePage={changePage}/>
+
+      <div className={`${styles.mainContent} ${showMenu ? styles.close : styles.open}`}>
+        {currentPage == "Today" && <Today />}
+        {currentPage == "Upcoming" && <Upcoming />}
+        {currentPage == "Calendar" && <Calendar />}
+        {currentPage == "StickyWall" && <StickyWall />}
       </div>
     </div>
   );
