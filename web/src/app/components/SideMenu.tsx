@@ -44,7 +44,7 @@ const SideMenu: React.FC<SideMenuProps> = ({ show, handleClose }) => {
       onHide={handleClose}
       placement="start"
       className={styles.sideMenu}
-      style={{ backdropFilter: "none" }}
+      style={{ backdropFilter: "none"}}      
       backdrop={false}
     >
       <Offcanvas.Header>
@@ -75,7 +75,7 @@ const SideMenu: React.FC<SideMenuProps> = ({ show, handleClose }) => {
             <Button
               variant="light"
               className={styles.navItem}
-              onClick={() => navigateTo("/upcoming")}
+              // onClick={() => navigateTo("/upcoming")}
             >
               <FaArrowAltCircleRight className={styles.navIcon} />
               <div className={styles.navText}>Upcoming</div>
@@ -84,7 +84,7 @@ const SideMenu: React.FC<SideMenuProps> = ({ show, handleClose }) => {
             <Button
               variant="light"
               className={styles.navItem}
-              onClick={() => navigateTo("/today")}
+              // onClick={() => navigateTo("/today")}
             >
               <FaList className={styles.navIcon} />
               <div className={styles.navText}>Today</div>
@@ -93,7 +93,7 @@ const SideMenu: React.FC<SideMenuProps> = ({ show, handleClose }) => {
             <Button
               variant="light"
               className={styles.navItem}
-              onClick={() => navigateTo("/calendar")}
+              // onClick={() => navigateTo("/calendar")}
             >
               <FaCalendarAlt className={styles.navIcon} />
               <div className={styles.navText}>Calendar</div>
@@ -101,7 +101,7 @@ const SideMenu: React.FC<SideMenuProps> = ({ show, handleClose }) => {
             <Button
               variant="light"
               className={styles.navItem}
-              onClick={() => navigateTo("/sticky-wall")}
+              // onClick={() => navigateTo("/sticky-wall")}
             >
               <FaStickyNote className={styles.navIcon} />
               <div className={styles.navText}>Sticky Wall</div>
