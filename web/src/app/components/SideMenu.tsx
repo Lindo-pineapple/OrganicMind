@@ -18,18 +18,9 @@ import styles from "@/styles/SideMenu.module.scss";
 interface SideMenuProps {
   show: boolean;
   handleClose: () => void;
-  listProps: {
-    personalBadgeCount?: number;
-    workBadgeCount?: number;
-    list1BadgeCount?: number;
-  };
 }
 
-const SideMenu: React.FC<SideMenuProps> = ({
-  show,
-  handleClose,
-  listProps,
-}) => {
+const SideMenu: React.FC<SideMenuProps> = ({ show, handleClose }) => {
   const router = useRouter();
   const [isTabletOrMobile, setIsTabletOrMobile] = useState(false);
 
@@ -133,9 +124,7 @@ const SideMenu: React.FC<SideMenuProps> = ({
             >
               <FaSquare className={styles.navIcon} style={{ color: "red" }} />
               <div className={styles.navText}>Personal</div>
-              <span className={styles.badge}>
-                {listProps.personalBadgeCount || 3}
-              </span>
+              <span className={styles.badge}>3</span>
             </Button>
             <Button
               variant="light"
@@ -147,9 +136,7 @@ const SideMenu: React.FC<SideMenuProps> = ({
                 style={{ color: "lightblue" }}
               />
               <div className={styles.navText}>Work</div>
-              <span className={styles.badge}>
-                {listProps.workBadgeCount || 6}
-              </span>
+              <span className={styles.badge}>6</span>
             </Button>
             <Button
               variant="light"
@@ -158,9 +145,7 @@ const SideMenu: React.FC<SideMenuProps> = ({
             >
               <FaSquare className={styles.navIcon} style={{ color: "gold" }} />
               <div className={styles.navText}>List1</div>
-              <span className={styles.badge}>
-                {listProps.list1BadgeCount || 1}
-              </span>
+              <span className={styles.badge}>1</span>
             </Button>
             <Button
               variant="light"
