@@ -22,7 +22,7 @@ const Main: React.FC = () => {
     {
       title: "Content Strategy",
       color: "lightblue",
-      text: "Would need time to get insights (goals, personals, budget, audits), but adter, it would be good to focus on assembling my team (start with SEO specialist, then perhaps an email marketer?). Also need to brainstorm on tooling.)",
+      text: "Would need time to get insights (goals, personals, budget, audits), but adter, it would be good to focus on assembling my team (start with SEO specialist, then perhaps an email marketer?). Also need to brainstorm on tooling.",
       id: 1,
     },
     {
@@ -33,10 +33,11 @@ const Main: React.FC = () => {
     },
     {
       title: "Banner Ads",
-      color: "peach",
+      color: "peachpuff",
       text: "Notes from the workshop:\n- Sizing matters\n- Choose distinctive imagery\n- The landing page must match the display ad",
       id: 3,
     },
+    
   ];
 
   //page state
@@ -50,7 +51,7 @@ const Main: React.FC = () => {
   const handleClose = () => setShowMenu(false);
 
   return (
-    <div className={`${styles.mainContentWrapper}`}>
+    <div className={`p-0 m-0 vh-100 vw-100 ${styles.mainContentWrapper}`}>
       <div className={styles.menuToggle}>
         <Button
           variant="link"
