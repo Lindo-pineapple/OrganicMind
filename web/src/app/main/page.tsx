@@ -12,6 +12,33 @@ import Upcoming from "../components/Upcoming";
 const Main: React.FC = () => {
   const [showMenu, setShowMenu] = useState(false);
 
+  const notes: NoteType[] = [
+    {
+      title: "Social Media",
+      color: "yellow",
+      text: "- Plan social content\n- Build content calendar\n- Plan promotion and distribution",
+      id: 0,
+    },
+    {
+      title: "Content Strategy",
+      color: "lightblue",
+      text: "Would need time to get insights (goals, personals, budget, audits), but adter, it would be good to focus on assembling my team (start with SEO specialist, then perhaps an email marketer?). Also need to brainstorm on tooling.)",
+      id: 1,
+    },
+    {
+      title: "Email A/B Tests",
+      color: "pink",
+      text: "- Subject lines\n- Sender\n- CTA\n- Sending Times",
+      id: 2,
+    },
+    {
+      title: "Banner Ads",
+      color: "peach",
+      text: "Notes from the workshop:\n- Sizing matters\n- Choose distinctive imagery\n- The landing page must match the display ad",
+      id: 3,
+    },
+  ];
+
   //page state
   const [currentPage, setCurrentPage] = useState('Today');
 
@@ -40,7 +67,7 @@ const Main: React.FC = () => {
         {currentPage == "Today" && <Today />}
         {currentPage == "Upcoming" && <Upcoming />}
         {currentPage == "Calendar" && <Calendar />}
-        {currentPage == "StickyWall" && <StickyWall />}
+        {currentPage == "StickyWall" && <StickyWall notes={notes} />}
       </div>
     </div>
   );
