@@ -4,7 +4,6 @@ import {
   FaSearch,
   FaCog,
   FaSignOutAlt,
-  FaArrowAltCircleRight,
   FaList,
   FaCalendarAlt,
   FaStickyNote,
@@ -12,6 +11,7 @@ import {
   FaSquare,
   FaBars,
 } from "react-icons/fa";
+import { FiChevronsRight } from "react-icons/fi";
 import { useRouter } from "next/navigation";
 import styles from "@/styles/SideMenu.module.scss";
 
@@ -84,7 +84,7 @@ const SideMenu: React.FC<SideMenuProps> = ({
               }`}
               active={active == "Upcoming"}
             >
-              <FaArrowAltCircleRight className={styles.navIcon} />
+              <FiChevronsRight size={22} style={{marginRight: 5}}/>
               <div className={styles.navText}>Upcoming</div>
               <span
                 className={`${styles.badge} ${
@@ -298,7 +298,7 @@ const SideMenu: React.FC<SideMenuProps> = ({
         <Button
           variant="light"
           className={styles.menuButton}
-          onClick={() => router.push("/signout")}
+          onClick={() => router.push("/")}
         >
           <FaSignOutAlt className={styles.menuIcon} /> Sign Out
         </Button>

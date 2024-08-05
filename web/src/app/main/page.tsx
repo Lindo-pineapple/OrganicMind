@@ -37,13 +37,12 @@ const Main: React.FC = () => {
       text: "Notes from the workshop:\n- Sizing matters\n- Choose distinctive imagery\n- The landing page must match the display ad",
       id: 3,
     },
-    
   ];
 
   //page state
-  const [currentPage, setCurrentPage] = useState('Today');
+  const [currentPage, setCurrentPage] = useState("Today");
 
-  function changePage(page: string){
+  function changePage(page: string) {
     setCurrentPage(page);
   }
 
@@ -62,9 +61,17 @@ const Main: React.FC = () => {
         </Button>
       </div>
 
-      <SideMenu show={showMenu} handleClose={handleClose} changePage={changePage}/>
+      <SideMenu
+        show={showMenu}
+        handleClose={handleClose}
+        changePage={changePage}
+      />
 
-      <div className={`${styles.mainContent} ${showMenu ? styles.close : styles.open}`}>
+      <div
+        className={`${styles.mainContent} ${
+          showMenu ? styles.close : styles.open
+        }`}
+      >
         {currentPage == "Today" && <Today />}
         {currentPage == "Upcoming" && <Upcoming />}
         {currentPage == "Calendar" && <Calendar />}
