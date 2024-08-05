@@ -53,7 +53,7 @@ const LoginPage: React.FC = () => {
       setPassword("");
       if (nameInputRef.current) nameInputRef.current.value = "";
       setName("");
-      router.push("/app");
+      router.push("/main");
     } else {
       alert('Login failed');
       if (passwordInputRef.current) passwordInputRef.current.value = "";
