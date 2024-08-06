@@ -5,7 +5,9 @@ dotenv.config();
 const API = {
   PORT: process.env.PORT || 5001,
   DB_STRING: process.env.MONGO_CONNECTION_STRING,
-  AUTH_SECRET: process.env.AUTH_SECRET
+  AUTH_SECRET: process.env.AUTH_SECRET,
+  REDIS_HOST: process.env.REDIS_HOST || 'redis',
+  REDIS_PORT: process.env.REDIS_PORT || 6379
 }
 
 const HTTP_CODES = {

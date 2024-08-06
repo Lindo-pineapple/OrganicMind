@@ -12,10 +12,37 @@ import Upcoming from "../components/Upcoming";
 const Main: React.FC = () => {
   const [showMenu, setShowMenu] = useState(false);
 
-  //page state
-  const [currentPage, setCurrentPage] = useState('Today');
+  const notes: NoteType[] = [
+    {
+      title: "Social Media",
+      color: "yellow",
+      text: "- Plan social content\n- Build content calendar\n- Plan promotion and distribution",
+      id: 0,
+    },
+    {
+      title: "Content Strategy",
+      color: "lightblue",
+      text: "Would need time to get insights (goals, personals, budget, audits), but adter, it would be good to focus on assembling my team (start with SEO specialist, then perhaps an email marketer?). Also need to brainstorm on tooling.",
+      id: 1,
+    },
+    {
+      title: "Email A/B Tests",
+      color: "pink",
+      text: "- Subject lines\n- Sender\n- CTA\n- Sending Times",
+      id: 2,
+    },
+    {
+      title: "Banner Ads",
+      color: "peachpuff",
+      text: "Notes from the workshop:\n- Sizing matters\n- Choose distinctive imagery\n- The landing page must match the display ad",
+      id: 3,
+    },
+  ];
 
-  function changePage(page: string){
+  //page state
+  const [currentPage, setCurrentPage] = useState("Today");
+
+  function changePage(page: string) {
     setCurrentPage(page);
   }
 
@@ -23,7 +50,7 @@ const Main: React.FC = () => {
   const handleClose = () => setShowMenu(false);
 
   return (
-    <div className={`${styles.mainContentWrapper}`}>
+    <div className={`p-0 m-0 vh-100 vw-100 ${styles.mainContentWrapper}`}>
       <div className={styles.menuToggle}>
         <Button
           variant="link"
@@ -34,13 +61,21 @@ const Main: React.FC = () => {
         </Button>
       </div>
 
-      <SideMenu show={showMenu} handleClose={handleClose} changePage={changePage}/>
+      <SideMenu
+        show={showMenu}
+        handleClose={handleClose}
+        changePage={changePage}
+      />
 
-      <div className={`${styles.mainContent} ${showMenu ? styles.close : styles.open}`}>
+      <div
+        className={`${styles.mainContent} ${
+          showMenu ? styles.close : styles.open
+        }`}
+      >
         {currentPage == "Today" && <Today />}
         {currentPage == "Upcoming" && <Upcoming />}
         {currentPage == "Calendar" && <Calendar />}
-        {currentPage == "StickyWall" && <StickyWall />}
+        {currentPage == "StickyWall" && <StickyWall notes={notes} />}
       </div>
     </div>
   );
