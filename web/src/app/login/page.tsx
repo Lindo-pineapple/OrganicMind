@@ -100,7 +100,7 @@ const LoginPage: React.FC = () => {
               <Form className="w-100 mb-3" onSubmit={handleSubmit}>
                 <div className="mb-3">
                   <OverlayTrigger
-                    placement="right"
+                    placement="left"
                     overlay={renderTooltip("Please enter a valid email address")}
                   >
                     <Form.Control
@@ -117,7 +117,7 @@ const LoginPage: React.FC = () => {
                 </div>
                 <div className="mb-3 position-relative">
                   <OverlayTrigger
-                    placement="right"
+                    placement="left"
                     overlay={renderTooltip("Password must be 8-16 characters long and include uppercase, lowercase, number, and special character")}
                   >
                     <Form.Control

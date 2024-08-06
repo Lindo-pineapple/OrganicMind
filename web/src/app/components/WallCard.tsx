@@ -5,7 +5,7 @@ import styles from "@/styles/Card.module.scss";
 const WallCard = (props: { color: string; title: string; text: string }) => {
   return (
     <Card
-      className={`${styles.cardContainer}`}
+      className={`shadow ${styles.cardContainer}`}
       style={{ backgroundColor: `${props.color}` }}
     >
       <Card.Body>

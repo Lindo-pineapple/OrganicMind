@@ -21,7 +21,7 @@ const StickyWall = (props: { notes: NoteType[] }) => {
           );
         })}
         <Card
-          className={`container ${styles.addNote}`}
+          className={`shadow ${styles.addNote}`}
           style={{
             backgroundColor: `lightgrey`,
           }}
