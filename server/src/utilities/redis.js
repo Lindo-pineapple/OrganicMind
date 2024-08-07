@@ -1,10 +1,10 @@
-import Redis from 'ioredis';
-import {API} from '../globals';
+import Redis from "ioredis";
+import { API } from "../globals.js";
 
 // Create a Redis client instance
 const redis = new Redis({
-  host: API.REDIS_HOST,  // Redis server hostname
-  port: API.REDIS_PORT,     // Redis server port
+  host: API.REDIS_HOST, // Redis server hostname
+  port: API.REDIS_PORT, // Redis server port
 });
 
 export default redis;

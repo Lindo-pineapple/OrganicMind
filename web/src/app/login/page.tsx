@@ -46,7 +46,6 @@ const LoginPage: React.FC = () => {
     if (!validateForm()) return;
 
     let regUser: any | boolean = await LoginUser(name, password);
-    console.log(regUser);
 
     if (regUser !== false) {
       if (passwordInputRef.current) passwordInputRef.current.value = "";

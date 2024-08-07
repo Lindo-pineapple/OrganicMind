@@ -8,6 +8,7 @@ import swaggerSpec from "./src/utilities/swagger.js";
 import { API, HTTP_CODES } from "./src/globals.js";
 import routes from "./src/routes/routes.js";
 import cors from  'cors';
+import redis from "./src/utilities/redis.js";
 
 const app = express();
 
@@ -35,7 +36,7 @@ mongoose.connect(API.DB_STRING).then(
         secret: API.AUTH_SECRET,
         resave: false,
         saveUninitialized: true,
-        cookie: { maxAge: 60 * 60 * 1000 }, // 30 minutes
+        cookie: { maxAge: 30 * 60 * 1000 }, // 30 minutes
       })
     );
 
@@ -53,6 +54,8 @@ mongoose.connect(API.DB_STRING).then(
 
       res.status(HTTP_CODES.SERVER_ERROR).send(serviceName);
     });
+
+    redis.connect(() => logger.log('Redis Connected'))
 
     app.listen(port, () =>
       logger.log(`${serviceName} listening on port ${port}`)

@@ -298,7 +298,11 @@ const SideMenu: React.FC<SideMenuProps> = ({
         <Button
           variant="light"
           className={styles.menuButton}
-          onClick={() => router.push("/")}
+          onClick={() => {
+            localStorage.removeItem('user');
+            localStorage.removeItem('token');
+            router.push("/");
+          }}
         >
           <FaSignOutAlt className={styles.menuIcon} /> Sign Out
         </Button>

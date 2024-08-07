@@ -2,6 +2,7 @@ import pkg from "jsonwebtoken";
 import { compareSync, hashSync } from "bcrypt";
 import { HTTP_CODES, DEFAULT_ERROR_MESSAGE } from "../globals.js";
 import User from "../models/UserModel.js";
+import redis from "../utilities/redis.js";
 
 const AuthSecret = process.env.AUTH_SECRET;
 
@@ -11,7 +12,11 @@ export async function login(req, res) {
   if (!user || !compareSync(password, user.password)) {
     return res.status(401).send("Invalid email or password.");
   }
-  const token = pkg.sign({ id: user._id }, AuthSecret, { expiresIn: "30m" });
+  const token = pkg.sign({ id: user._id }, AuthSecret, { expiresIn: "1h" });
+
+  redis.setex("token", 60 * 60 * 1000, token);
+  redis.setex("user", 60 * 60 * 1000, user);
+
   res.status(HTTP_CODES.OK).send({ response: user, token: token });
   req.session.token = token;
 }
@@ -23,10 +28,10 @@ export async function register(req, res) {
     password: hashedPassword,
     email: req.body.email,
   });
-  const checkExists = await User.findOne({email: req.body.email});
+  const checkExists = await User.findOne({ email: req.body.email });
 
   if (checkExists) {
-    return res.send({data: 'User already Exists.'})
+    return res.send({ data: "User already Exists." });
   }
 
   try {
