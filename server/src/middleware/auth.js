@@ -1,11 +1,13 @@
 import jwt from "jsonwebtoken";
 import { API, HTTP_CODES } from "../globals.js";
+import redis from "../utilities/redis.js";
 
 const AuthSecret = API.AUTH_SECRET;
 
-export default (req, res, next) => {
+export default async (req, res, next) => {
   const token = req.header("x-auth-token");
-  if (!token) {
+  const RedisToken = await redis.get("token");
+  if (!RedisToken || !token) {
     return res
       .status(HTTP_CODES.ACCESS_DENIED)
       .json({ message: "Access denied. No token provided." });

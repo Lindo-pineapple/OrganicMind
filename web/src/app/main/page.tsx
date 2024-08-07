@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Container } from "react-bootstrap";
 import SideMenu from "../components/SideMenu";
 import styles from "./Main.module.scss";
@@ -8,8 +8,17 @@ import Calendar from "../components/Calendar";
 import StickyWall from "../components/StickyWall";
 import Today from "../components/Today";
 import Upcoming from "../components/Upcoming";
+import { IsAuthenticated } from "@/api/users";
+import { redirect } from "next/navigation";
 
 const Main: React.FC = () => {
+  useEffect(() => {
+    const isNotAuth = IsAuthenticated();    
+    if (isNotAuth) {
+      redirect("/login");
+    }
+  }, []);
+
   const [showMenu, setShowMenu] = useState(false);
 
   const notes: NoteType[] = [
