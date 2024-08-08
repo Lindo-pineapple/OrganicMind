@@ -54,6 +54,12 @@ const DUMMYTASKS: Task[] = [
         isDone: false,
       },
     ],
+    tags: [
+      {
+        tagName: "mobility",
+        tagColor: "lightgreen",
+      },
+    ],
   },
   {
     id: 3,
@@ -181,7 +187,7 @@ const Today = (props: { badge: number }) => {
         onClick={() => {}}
       >
         <FaPlus size={20} className={styles.AddIcon} />
-        <text className={styles.AddText}>Add New List</text>
+        <text className={styles.AddText}>Add New Task</text>
       </Button>
       <div className={`container ${styles.ItemContainer}`}>
         <TaskList Tasks={DUMMYTASKS} onTaskClick={handleTaskClick} />
