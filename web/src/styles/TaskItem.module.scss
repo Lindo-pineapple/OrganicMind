@@ -1,0 +1,89 @@
+.TaskContainer {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 10px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #dcdbdb;
+  background-color: white;
+  color: grey;
+}
+
+.MainTask {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between; /* Positions items at opposite ends */
+    align-items: center; /* Ensures items are vertically centered */
+  }
+
+.TaskDetails {
+  display: flex;
+  flex-direction: row;
+  margin: 10px 15px;
+  padding: 0px 10px;
+}
+
+.TaskCheck {
+  margin: 10px;
+}
+
+.TaskText {
+  margin-top: 7px;
+  margin-left: 10px;
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+.TaskIcon {
+  margin: 10px;
+  color: black;
+}
+
+.TaskList {
+    margin: 0px 10px;
+}
+.ListText {
+    font-weight: bold;
+}
+.ListIcon {
+    margin: 0px 10px;
+    border-radius: 8px;
+}
+
+.SubTasks {
+    margin: 0px 10px;
+}
+.SubTasksText {
+    font-weight: bold;
+}
+.badge {
+    margin: 0px 10px;
+    padding: 2px 10px;
+    background-color: #e8e8e8;
+    color: black;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.DueDate {
+    margin: 0px 10px;
+}
+.DateIcon {
+    margin: 0px 10px;
+}
+.DateText {
+    font-weight: bold;
+}
+
+
+.seperator {
+    color: #e8e8e8;
+    margin-left: 5px;
+}

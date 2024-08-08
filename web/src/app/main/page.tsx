@@ -81,7 +81,7 @@ const Main: React.FC = () => {
           showMenu ? styles.close : styles.open
         }`}
       >
-        {currentPage == "Today" && <Today />}
+        {currentPage == "Today" && <Today badge={5} />}
         {currentPage == "Upcoming" && <Upcoming />}
         {currentPage == "Calendar" && <Calendar />}
         {currentPage == "StickyWall" && <StickyWall notes={notes} />}
