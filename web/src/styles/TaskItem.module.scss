@@ -13,10 +13,12 @@
 }
 
 .MainTask {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-}
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between; /* Positions items at opposite ends */
+    align-items: center; /* Ensures items are vertically centered */
+  }
 
 .TaskDetails {
   display: flex;
@@ -38,8 +40,6 @@
 
 .TaskIcon {
   margin: 10px;
-  position: absolute;
-  right: 5%;
   color: black;
 }
 
