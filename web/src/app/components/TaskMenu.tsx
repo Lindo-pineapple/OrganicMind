@@ -3,7 +3,7 @@ import { Offcanvas, Button, Form } from "react-bootstrap";
 import { FaPlus, FaSignOutAlt, FaSlidersH } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 import { useRouter } from "next/navigation";
-import styles from "@/styles/SideMenu.module.scss";
+import styles from "@/styles/TaskMenu.module.scss";
 import SelectMenu from "./SelectMenu";
 import TaskTags from "./TaskTags";
 
@@ -52,14 +52,14 @@ const TaskMenu: React.FC<SideMenuProps> = ({ show, handleClose, Task }) => {
             type="text"
             placeholder="Task Title"
             value={Task.title}
-            className={styles.Title}
+            className={styles.TitleInput}
           />
           <Form.Control
             as="textarea"
             rows={4}
             placeholder="Description"
             value={Task.description}
-            className={styles.Description}
+            className={styles.DescriptionInput}
           />
         </div>
         <div className={`${styles.AdditionalDetailsContainer}`}>

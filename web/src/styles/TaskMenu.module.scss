@@ -25,3 +25,71 @@
   flex: 1; /* Take up available space */
   padding: 0;
 }
+
+.closeButton {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background: none; /* Remove default button background */
+  border: none; /* Remove default button border */
+  color: #6c757d; /* Adjust color if needed */
+}
+
+.TitleDescriptionContainer {
+  width: 100%;
+  margin: 0px 0px 20px 0px;
+}
+
+.TitleInput {
+  margin: 10px 0px;
+  background-color: #f4f4f4;
+  color: #6c757d; /* Adjust color if needed */
+}
+
+.DescriptionInput {
+  background-color: #f4f4f4;
+  color: #6c757d; /* Adjust color if needed */
+}
+
+.AdditionalDetailsContainer {
+    margin-bottom: 20px;
+}
+
+.TaskListContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: flex-start;
+  align-content: center;
+  margin-bottom: 10px;
+
+  span {
+
+  }
+}
+
+.TaskDateContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: flex-start;
+  align-content: center;
+  margin-bottom: 10px;
+
+  label {
+
+  }
+}
+
+.TaskTagsContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: flex-start;
+  align-content: center;
+  margin-bottom: 10px;
+
+  span {
+
+  }
+}
