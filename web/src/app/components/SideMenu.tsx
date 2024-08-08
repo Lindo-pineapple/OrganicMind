@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Offcanvas, Button, Form } from "react-bootstrap";
 import {
   FaSearch,
-  FaCog,
   FaSignOutAlt,
   FaList,
   FaCalendarAlt,
@@ -10,6 +9,7 @@ import {
   FaPlus,
   FaSquare,
   FaBars,
+  FaSlidersH
 } from "react-icons/fa";
 import { FiChevronsRight } from "react-icons/fi";
 import { useRouter } from "next/navigation";
@@ -292,7 +292,7 @@ const SideMenu: React.FC<SideMenuProps> = ({
           className={styles.menuButton}
           onClick={() => router.push("/settings")}
         >
-          <FaCog className={styles.menuIcon} /> Settings
+          <FaSlidersH className={`${styles.menuIcon}`} /> Settings
         </Button>
 
         <Button
