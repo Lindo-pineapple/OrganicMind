@@ -1,0 +1,27 @@
+.sideMenu {
+  display: flex;
+  flex-direction: column;
+  height: 96vh; /* Full height of the viewport */
+  width: 20%; /* Default width for desktop */
+  background-color: #f4f4f4;
+  border-radius: 20px;
+  margin: 20px;
+
+  @media (max-width: 768px) {
+    width: 40%; /* Width for tablets */
+  }
+
+  @media (max-width: 576px) {
+    width: 100%; /* Full width for mobile */
+  }
+
+  /* Remove the default backdrop */
+  .offcanvas-backdrop {
+    display: none !important;
+  }
+}
+
+.offcanvas-body {
+  flex: 1; /* Take up available space */
+  padding: 0;
+}
