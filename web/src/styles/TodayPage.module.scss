@@ -5,6 +5,15 @@
     align-content: flex-start;
 }
 
+.mainContainer.open {
+    display: flex;
+    flex: 1;
+    width: 30%;
+    // background-color: aqua;
+    margin-right: 42%;
+  }
+  
+
 .ItemContainer {
     width: 100%;
     margin: 0;
