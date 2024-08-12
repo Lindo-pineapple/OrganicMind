@@ -5,9 +5,14 @@ import styles from "@/styles/StickyWall.module.scss";
 import WallCard from "./WallCard";
 import { AiOutlinePlus } from "react-icons/ai";
 
-const StickyWall = (props: { notes: NoteType[] }) => {
+const StickyWall = (props: { notes: NoteType[]; menuOpen: boolean }) => {
   return (
-    <Container fluid className={`p-0 vh-90 vw-100 container wall`}>
+    <Container
+      fluid
+      className={`p-0 vh-90 vw-100 container wall ${
+        props.menuOpen ? styles.open : styles.close
+      }`}
+    >
       <h1 className={`title b ${styles.title}`}>Sticky Wall</h1>
       <Container fluid className={`container ${styles.cardContainer}`}>
         {props.notes.map((note) => {
