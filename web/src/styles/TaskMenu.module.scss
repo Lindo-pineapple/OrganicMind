@@ -24,6 +24,7 @@
 .offcanvas-body {
   flex: 1; /* Take up available space */
   padding: 0;
+  overflow-y: scroll;
 }
 
 .closeButton {
@@ -49,6 +50,7 @@
 .DescriptionInput {
   background-color: #f4f4f4;
   color: #6c757d; /* Adjust color if needed */
+  resize: none;
 }
 
 .AdditionalDetailsContainer {
@@ -64,7 +66,7 @@
   margin-bottom: 10px;
 
   span {
-
+    width: 25%;
   }
 }
 
@@ -77,7 +79,7 @@
   margin-bottom: 10px;
 
   label {
-
+    width: 25%;
   }
 }
 
@@ -90,6 +92,83 @@
   margin-bottom: 10px;
 
   span {
-
+    width: 25%;
   }
+}
+
+.SelectMenu {
+    width: auto;
+    font-size: 14px;
+}
+
+.AddButton {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: 20px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #dcdbdb;
+    background-color: #f4f4f4;
+    color: grey;
+}
+
+.AddIcon {
+    margin: 10px;
+}
+.AddText {
+    margin-top: 7px;
+    margin-left: 10px;
+    font-size: 17px;
+    font-weight: thin;
+}
+
+.SubTask {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 10px 20px;
+    color: black;
+}
+
+.TaskCheck {
+    margin-top: 10px;
+}
+.TaskText {
+    margin-top: 7px;
+    margin-left: 10px;
+    font-size: 18px;
+    font-weight: thin;
+}
+
+.menuFooter {
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+    align-content: center;
+    justify-content: space-between;
+    // margin-top: auto; /* Pushes the footer to the bottom */
+  }
+
+.menuButton {
+    width: 47%;
+    font-weight: bold;
+    padding: 10px 0px;
+    border-radius: 10px;
+
+    &.btnDelete {
+        border-width: 1px;
+        border-style: solid;
+        border-color: #dcdbdb;
+    }
+
+    &.btnSave {
+        background-color: gold;
+    }
 }

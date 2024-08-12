@@ -66,7 +66,7 @@ const TaskMenu: React.FC<SideMenuProps> = ({ show, handleClose, Task }) => {
           <div className={`${styles.TaskListContainer}`}>
             <span>List</span>
             <SelectMenu
-              Items={["Personal", "Work", "List 1"]}
+              Items={[Task.list?.listName!, "Personal", "Work", "List 1"]}
             />
           </div>
           <div className={`${styles.TaskDateContainer}`}>
@@ -76,7 +76,7 @@ const TaskMenu: React.FC<SideMenuProps> = ({ show, handleClose, Task }) => {
             />
           </div>
           <div className={`${styles.TaskTagsContainer}`}>
-            <span>Tag</span>
+            <span>Tags</span>
             <TaskTags tags={Task.tags} />
           </div>
         </div>
@@ -100,6 +100,7 @@ const TaskMenu: React.FC<SideMenuProps> = ({ show, handleClose, Task }) => {
                     id="flexCheckDefault"
                     checked={subTask.isDone}
                     onChange={() => {}}
+                    size={25}
                   />
                   <text className={styles.TaskText}>{subTask.title}</text>
                 </div>
@@ -111,7 +112,7 @@ const TaskMenu: React.FC<SideMenuProps> = ({ show, handleClose, Task }) => {
         {/* Menu items */}
         <Button
           variant="light"
-          className={styles.menuButton}
+          className={`${styles.menuButton} ${styles.btnDelete}`}
           onClick={() => {}}
         >
           Delete Task
@@ -119,7 +120,7 @@ const TaskMenu: React.FC<SideMenuProps> = ({ show, handleClose, Task }) => {
 
         <Button
           variant="light"
-          className={styles.menuButton}
+          className={`${styles.menuButton} ${styles.btnSave}`}
           onClick={() => {}}
         >
           Save changes

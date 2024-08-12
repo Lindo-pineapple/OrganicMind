@@ -1,8 +1,9 @@
 import Form from "react-bootstrap/Form";
+import styles from "@/styles/TaskMenu.module.scss"
 
 function SelectMenu(props: { Items: string[] }) {
   return (
-    <Form.Select>
+    <Form.Select className={styles.SelectMenu}>
       {props.Items.map((item: string) => {
         return <option value={item}>{item}</option>;
       })}
