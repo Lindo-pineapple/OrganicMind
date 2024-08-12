@@ -1,0 +1,174 @@
+.sideMenu {
+  display: flex;
+  flex-direction: column;
+  height: 96vh; /* Full height of the viewport */
+  width: 20%; /* Default width for desktop */
+  background-color: #f4f4f4;
+  border-radius: 20px;
+  margin: 20px;
+
+  @media (max-width: 768px) {
+    width: 40%; /* Width for tablets */
+  }
+
+  @media (max-width: 576px) {
+    width: 100%; /* Full width for mobile */
+  }
+
+  /* Remove the default backdrop */
+  .offcanvas-backdrop {
+    display: none !important;
+  }
+}
+
+.offcanvas-body {
+  flex: 1; /* Take up available space */
+  padding: 0;
+  overflow-y: scroll;
+}
+
+.closeButton {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background: none; /* Remove default button background */
+  border: none; /* Remove default button border */
+  color: #6c757d; /* Adjust color if needed */
+}
+
+.TitleDescriptionContainer {
+  width: 100%;
+  margin: 0px 0px 20px 0px;
+}
+
+.TitleInput {
+  margin: 10px 0px;
+  background-color: #f4f4f4;
+  color: #6c757d; /* Adjust color if needed */
+}
+
+.DescriptionInput {
+  background-color: #f4f4f4;
+  color: #6c757d; /* Adjust color if needed */
+  resize: none;
+}
+
+.AdditionalDetailsContainer {
+    margin-bottom: 20px;
+}
+
+.TaskListContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: flex-start;
+  align-content: center;
+  margin-bottom: 10px;
+
+  span {
+    width: 25%;
+  }
+}
+
+.TaskDateContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: flex-start;
+  align-content: center;
+  margin-bottom: 10px;
+
+  label {
+    width: 25%;
+  }
+}
+
+.TaskTagsContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: flex-start;
+  align-content: center;
+  margin-bottom: 10px;
+
+  span {
+    width: 25%;
+  }
+}
+
+.SelectMenu {
+    width: auto;
+    font-size: 14px;
+}
+
+.AddButton {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: 20px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #dcdbdb;
+    background-color: #f4f4f4;
+    color: grey;
+}
+
+.AddIcon {
+    margin: 10px;
+}
+.AddText {
+    margin-top: 7px;
+    margin-left: 10px;
+    font-size: 17px;
+    font-weight: thin;
+}
+
+.SubTask {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 10px 20px;
+    color: black;
+}
+
+.TaskCheck {
+    margin-top: 10px;
+}
+.TaskText {
+    margin-top: 7px;
+    margin-left: 10px;
+    font-size: 18px;
+    font-weight: thin;
+}
+
+.menuFooter {
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+    align-content: center;
+    justify-content: space-between;
+    // margin-top: auto; /* Pushes the footer to the bottom */
+  }
+
+.menuButton {
+    width: 47%;
+    font-weight: bold;
+    padding: 10px 0px;
+    border-radius: 10px;
+
+    &.btnDelete {
+        border-width: 1px;
+        border-style: solid;
+        border-color: #dcdbdb;
+    }
+
+    &.btnSave {
+        background-color: gold;
+    }
+}
