@@ -65,6 +65,7 @@ const Main: React.FC = () => {
           variant="link"
           className={styles.openButton}
           onClick={handleShow}
+          style={{display: `${showMenu ? 'none' : ''}`}}
         >
           <FaBars size={20} />
         </Button>

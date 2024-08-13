@@ -42,3 +42,22 @@
   margin-left: 25%;
   right: 0%;
 }
+
+/* Mobile styles */
+@media (max-width: 767px) {
+  .mainContentWrapper {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+
+}
+
+/* Tablet styles */
+@media (min-width: 768px) and (max-width: 991px) {
+  .mainContentWrapper {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+}

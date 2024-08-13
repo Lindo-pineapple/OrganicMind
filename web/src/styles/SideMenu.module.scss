@@ -6,15 +6,6 @@
   background-color: #f4f4f4;
   border-radius: 20px;
   margin: 20px;
-
-  @media (max-width: 768px) {
-    width: 40%; /* Width for tablets */
-  }
-
-  @media (max-width: 576px) {
-    width: 100%; /* Full width for mobile */
-  }
-
   /* Remove the default backdrop */
   .offcanvas-backdrop {
     display: none !important;
@@ -174,4 +165,21 @@
   background: none; /* Remove default button background */
   border: none; /* Remove default button border */
   color: #6c757d; /* Adjust color if needed */
+}
+
+
+/* Mobile styles */
+@media (max-width: 767px) {
+  .sideMenu {
+    width: 100vw !important;
+    height: 100vh !important;
+  }
+}
+
+/* Tablet styles */
+@media (min-width: 768px) and (max-width: 991px) {
+  .sideMenu {
+    width: 30vw !important;
+    height: 94vh; /* Full height of the viewport */
+  }
 }
