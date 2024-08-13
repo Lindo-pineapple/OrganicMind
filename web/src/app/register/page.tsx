@@ -104,8 +104,11 @@ const RegisterPage: React.FC = () => {
   };
 
   const renderTooltip = (message: string) => (
-    <Tooltip id="button-tooltip">{message}</Tooltip>
+    <Tooltip id="button-tooltip" className={styles.tooltip}>
+      {message}
+    </Tooltip>
   );
+  
 
   return (
     <Container fluid className={`p-0 m-0 vh-100 ${styles.main}`}>
@@ -138,7 +141,7 @@ const RegisterPage: React.FC = () => {
               <Form className="w-100 mb-3" onSubmit={handleSubmit}>
                 <div className="mb-3">
                   <OverlayTrigger
-                    placement="left"
+                    placement="auto"
                     overlay={renderTooltip(
                       "Please enter your name (more than 2 characters)"
                     )}
@@ -156,7 +159,7 @@ const RegisterPage: React.FC = () => {
                 </div>
                 <div className="mb-3">
                   <OverlayTrigger
-                    placement="left"
+                    placement="auto"
                     overlay={renderTooltip(
                       "Please enter a valid email address"
                     )}
@@ -174,7 +177,7 @@ const RegisterPage: React.FC = () => {
                 </div>
                 <div className="mb-3 position-relative">
                   <OverlayTrigger
-                    placement="left"
+                    placement="auto"
                     overlay={renderTooltip(
                       "Password must be 8-16 characters long and include uppercase, lowercase, number, and special character"
                     )}
@@ -202,7 +205,7 @@ const RegisterPage: React.FC = () => {
                 </div>
                 <div className="mb-3 position-relative">
                   <OverlayTrigger
-                    placement="left"
+                    placement="auto"
                     overlay={renderTooltip("Passwords must match")}
                   >
                     <Form.Control

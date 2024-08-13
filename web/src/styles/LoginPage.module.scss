@@ -81,6 +81,29 @@
   width: 100%;
 }
 
+/* Existing styles */
+.form-control {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for focus and error states */
+}
+
+/* Enhanced error state styling */
+.form-control.border-danger {
+  border-color: red !important; /* Thicker red border */
+  box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.25) !important; /* Red shadow to emphasize the error */
+}
+
+/* Optional: Override the active and focus states to ensure error styles are visible */
+.form-control:focus.border-danger {
+  border-color: red !important; /* Keep red border when focused */
+  box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.25) !important; /* Red shadow to emphasize the error */
+}
+
+/* Optional: Style for input fields when there is an error */
+.input-error {
+  border-color: red !important; /* Red border for error state */
+  background-color: #fdd !important; /* Light red background to highlight the error */
+}
+
 .loginButton {
   width: 100%;
   color: black;

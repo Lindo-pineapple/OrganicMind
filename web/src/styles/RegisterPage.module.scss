@@ -235,3 +235,11 @@
     }
   }
 }
+
+/* Tooltip styles for mobile and tablet */
+@media (max-width: 991px) {
+  .tooltip-inner {
+    white-space: pre-wrap; /* Ensures tooltip text wraps */
+    text-align: center; /* Centers text */
+  }
+}
