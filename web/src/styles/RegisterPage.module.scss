@@ -152,28 +152,23 @@
   }
 
   .leftCard {
-    height: calc(40% - 40px);
+    height: calc(35% - 40px);
     width: calc(100% - 40px);
     margin-left: 10px;
   }
 
   .rightCard {
-    height: calc(45% - 40px);
+    height: calc(50% - 40px);
     width: calc(100% - 40px);
     border: none;
     margin-bottom: 2cm;
 
-    .loginButton {
-      padding: 10px 0px;
-      margin-bottom: 20px;
-    }
-
+    .loginButton,
     .otherButton {
       padding: 10px 0px;
-      margin-bottom: 10px;
     }
 
-    .textInput{
+    .textInput {
       padding: 10px 0px 10px 10px;
       border-radius: 5px;
     }
@@ -184,11 +179,11 @@
     }
 
     .lineContainer {
-      margin-top: -20px;
+      height: 0.3vh;
     }
 
     .bottomText {
-      font-weight: 600; 
+      font-weight: 600;
     }
   }
 }
@@ -224,13 +219,18 @@
     // background-color: violet;
     margin-bottom: 3.5cm;
 
-    .loginButton, .otherButton {
+    .loginButton,
+    .otherButton {
       padding: 10px 0px;
     }
 
-    .textInput{
+    .textInput {
       padding: 10px 0px 10px 10px;
       border-radius: 5px;
+    }
+
+    .otherButton {
+      margin-top: 10px;
     }
 
     h1 {
