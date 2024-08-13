@@ -78,13 +78,13 @@ const Main: React.FC = () => {
 
       <div
         className={`${styles.mainContent} ${
-          showMenu ? styles.close : styles.open
+          showMenu ? styles.open : styles.close
         }`}
       >
         {currentPage == "Today" && <Today badge={5} />}
         {currentPage == "Upcoming" && <Upcoming />}
         {currentPage == "Calendar" && <Calendar />}
-        {currentPage == "StickyWall" && <StickyWall notes={notes} />}
+        {currentPage == "StickyWall" && <StickyWall notes={notes} menuOpen={showMenu} />}
       </div>
     </div>
   );

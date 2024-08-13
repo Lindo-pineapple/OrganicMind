@@ -3,9 +3,18 @@ import React, { useEffect } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import styles from "../styles/HomePage.module.scss";
 import Link from "next/link";
-import { healthCheck } from "@/api/users"; // Make sure this path is correct
+import { IsAuthenticated, healthCheck } from "@/api/users"; // Make sure this path is correct
+import { redirect } from "next/navigation";
 
 const HomePage: React.FC = () => {
+
+  useEffect(() => {
+    const isNotAuth = IsAuthenticated();    
+    if (!isNotAuth) {
+      redirect("/main");
+    }
+  }, []);
+
   useEffect(() => {
     const performHealthCheck = async () => {
       try {
@@ -20,7 +29,7 @@ const HomePage: React.FC = () => {
   }, []);
 
   return (
-    <Container fluid className={`p-0 m-0 vh-100 ${styles.main}`}>
+    <Container fluid className={`p-0 m-0 vh-100 vw-100 ${styles.main}`}>
       <Row className="h-100 mx-0">
         <Col xs={12} md={6} className={`${styles.leftCard}`}>
           <div
@@ -46,7 +55,7 @@ const HomePage: React.FC = () => {
         >
           <div className={styles.cardContainer}>
             <div className={styles.cardContent}>
-              <h2 className="mb-3 left-0">Productive Mind</h2>
+              <h1 className="mb-3 left-0">Productive Mind</h1>
               <p className="mb-3">
                 With only the features you need, Organic Mind is customized for
                 individuals seeking a stress-free way to stay focused on their
@@ -59,7 +68,7 @@ const HomePage: React.FC = () => {
               >
                 Get Started{" "}
               </Button>
-              <div className="mt-3 text-center">
+              <div className={`mt-3 text-center ${styles.bottomText}`}>
                 Already have an account?{" "}
                 <a className={`${styles.link}`} href="/login">
                   Sign In

@@ -176,7 +176,9 @@ const Today = (props: { badge: number }) => {
   return (
     <div
       style={{ height: "100%", width: "100%" }}
-      className={`container ${styles.mainContainer}`}
+      className={`container ${styles.mainContainer} ${
+        showMenu ? styles.open : styles.close
+      }`}
     >
       <TaskMenu show={showMenu} handleClose={handleClose} Task={currentTask} />
       <h1 className={`${styles.title}`}>Today</h1>

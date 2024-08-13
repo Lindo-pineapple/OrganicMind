@@ -9,14 +9,22 @@ import {
   Tooltip,
   OverlayTrigger,
 } from "react-bootstrap";
-import styles from "../../styles/LoginPage.module.scss";
+import styles from "@/styles/RegisterPage.module.scss";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
-import { useRouter } from "next/navigation";
-import { RegisterUser } from "@/api/users";
+import { redirect, useRouter } from "next/navigation";
+import { IsAuthenticated, RegisterUser } from "@/api/users";
 
 const RegisterPage: React.FC = () => {
+
+  useEffect(() => {
+    const isNotAuth = IsAuthenticated();    
+    if (!isNotAuth) {
+      redirect("/main");
+    }
+  }, []);
+
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -126,7 +134,7 @@ const RegisterPage: React.FC = () => {
         >
           <div className={styles.cardContainer}>
             <div className={styles.cardContent}>
-              <h2 className="mb-3 left-0">Sign up</h2>
+              <h1 className="mb-3 left-0">Sign up</h1>
               <Form className="w-100 mb-3" onSubmit={handleSubmit}>
                 <div className="mb-3">
                   <OverlayTrigger
@@ -188,6 +196,7 @@ const RegisterPage: React.FC = () => {
                   >
                     <FontAwesomeIcon
                       icon={passwordVisible ? faEyeSlash : faEye}
+                      style={{color: "darkgrey"}}
                     />
                   </button>
                 </div>
@@ -213,6 +222,7 @@ const RegisterPage: React.FC = () => {
                   >
                     <FontAwesomeIcon
                       icon={confirmPasswordVisible ? faEyeSlash : faEye}
+                      style={{color: "darkgrey"}}
                     />
                   </button>
                 </div>
@@ -226,7 +236,7 @@ const RegisterPage: React.FC = () => {
                 </Button>
               </Form>
               <div
-                className={`m-2 text-center d-flex justify-content-center align-items-center ${styles.lineContainer}`}
+                className={`text-center d-flex justify-content-center align-items-center ${styles.lineContainer}`}
               >
                 <hr
                   className={`justify-content-center align-items-center ${styles.line}`}
@@ -246,7 +256,7 @@ const RegisterPage: React.FC = () => {
                   Facebook
                 </Button>
               </div>
-              <div className="mt-3 text-center">
+              <div className={`mt-3 text-center ${styles.bottomText}`}>
                 Already have an account?{" "}
                 <a className={`${styles.link}`} href="/login">
                   Sign In

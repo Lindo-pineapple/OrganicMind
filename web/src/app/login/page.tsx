@@ -1,14 +1,22 @@
 "use client";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Container, Row, Col, Button, Form, Tooltip, OverlayTrigger } from "react-bootstrap";
 import styles from "../../styles/LoginPage.module.scss";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
-import { useRouter } from "next/navigation";
-import { LoginUser } from '@/api/users';
+import { redirect, useRouter } from "next/navigation";
+import { IsAuthenticated, LoginUser } from '@/api/users';
 
 const LoginPage: React.FC = () => {
+
+  useEffect(() => {
+    const isNotAuth = IsAuthenticated();    
+    if (!isNotAuth) {
+      redirect("/main");
+    }
+  }, []);
+
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -95,7 +103,7 @@ const LoginPage: React.FC = () => {
         >
           <div className={styles.cardContainer}>
             <div className={styles.cardContent}>
-              <h2 className="mb-3 left-0">Sign in</h2>
+              <h1 className="mb-3 left-0">Sign in</h1>
               <Form className="w-100 mb-3" onSubmit={handleSubmit}>
                 <div className="mb-3">
                   <OverlayTrigger
@@ -104,7 +112,7 @@ const LoginPage: React.FC = () => {
                   >
                     <Form.Control
                       type="email"
-                      className={`form-control ${nameError ? 'border-danger' : ''}`}
+                      className={`form-control ${styles.textInput} ${nameError ? 'border-danger' : ''}`}
                       id="exampleInputEmail1"
                       placeholder="your@email.com"
                       aria-describedby="emailHelp"
@@ -121,7 +129,7 @@ const LoginPage: React.FC = () => {
                   >
                     <Form.Control
                       type={passwordVisible ? "text" : "password"}
-                      className={`form-control ${passwordError ? 'border-danger' : ''}`}
+                      className={`form-control ${styles.textInput} ${passwordError ? 'border-danger' : ''}`}
                       placeholder="password"
                       id="exampleInputPassword1"
                       onChange={handlePassword}
@@ -136,6 +144,7 @@ const LoginPage: React.FC = () => {
                   >
                     <FontAwesomeIcon
                       icon={passwordVisible ? faEyeSlash : faEye}
+                      style={{color: "darkgrey"}}
                     />
                   </button>
                 </div>
@@ -149,7 +158,7 @@ const LoginPage: React.FC = () => {
                 </Button>
               </Form>
               <div
-                className={`m-2 text-center d-flex justify-content-center align-items-center ${styles.lineContainer}`}
+                className={`text-center d-flex justify-content-center align-items-center ${styles.lineContainer}`}
               >
                 <hr
                   className={`justify-content-center align-items-center ${styles.line}`}
@@ -169,7 +178,7 @@ const LoginPage: React.FC = () => {
                   Facebook
                 </Button>
               </div>
-              <div className="mt-3 text-center">
+              <div className={`mt-3 text-center ${styles.bottomText}`}>
                 Don't have an account?{" "}
                 <a className={`${styles.link}`} href="/register">
                   Sign Up
