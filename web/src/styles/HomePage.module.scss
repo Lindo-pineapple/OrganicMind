@@ -1,27 +1,31 @@
+/* Base styling (Desktop/Laptop) */
 .container {
   display: flex;
   height: 100vh;
-  padding: 20px; 
-  box-sizing: border-box; 
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
-
-.leftCard, .rightCard {
+.leftCard,
+.rightCard {
   border-radius: 20px;
   margin: 10px;
 }
 
 .leftCard {
-  background: url('../../public/pexels-pineapple-supply-co-174660.jpg') no-repeat center center/cover;
+  background: url("../../public/pexels-pineapple-supply-co-174660.jpg")
+    no-repeat center center/cover;
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  height: calc(100vh - 40px);
-  width: calc(50% - 40px);
-  left: 10px;
-  top: 10px;
+  height: calc(100vh - 20px);
+  width: calc(50% - 20px); /* Half of viewport width minus padding */
 }
 
 .leftCardText {
@@ -40,7 +44,6 @@
   color: white;
 }
 
-
 .rightCard {
   background: white;
   display: flex;
@@ -51,14 +54,12 @@
   position: relative;
   border-width: 0.3px;
   border-color: rgb(228, 223, 223);
-  height: calc(100vh - 40px);
-  width: calc(50% - 40px);
-  left: 20px;
-  top: 10px;
+  height: calc(100vh - 20px);
+  width: calc(50% - 20px); /* Half of viewport width minus padding */
 }
 
 .cardContainer {
-  width: 100%;
+  width: 95%;
   max-width: 500px;
   height: 100%;
   display: flex;
@@ -67,7 +68,7 @@
 }
 
 .cardContent {
-  width: 100%;
+  width: 95%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -88,7 +89,7 @@
   border-color: gold;
 }
 
-.cardContent h2 {
+.cardContent h1 {
   text-align: left;
   width: 100%;
 }
@@ -98,19 +99,68 @@
   color: black;
 }
 
-@media (max-width: 768px) {
+/* Mobile styles */
+@media (max-width: 767px) {
   .container {
     flex-direction: column;
     padding: 10px;
+    box-sizing: border-box;
   }
 
-  .leftCard, .rightCard {
+  .leftCard,
+  .rightCard {
     width: calc(100% - 20px);
-    height: 45vh; 
+    height: 45%;
+    margin: 10px 0; /* Center alignment with margin adjustments */
   }
 
-  .leftCardText {
-    position: static;
-    margin: 10px;
+  .leftCard {
+    margin-bottom: 10px;
+  }
+
+  .rightCard {
+    margin-top: 10px;
+  }
+}
+
+/* Tablet styles */
+@media (min-width: 768px) and (max-width: 991px) {
+  .container {
+    flex-direction: column;
+    display: flex;
+    flex: 1;
+    height: 100vh;
+    width: 100vw;
+    padding: 20px;
+    box-sizing: content-box;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .leftCard,
+  .rightCard {
+    width: calc(100% - 40px);
+    margin: 10px 0; /* Margin for vertical spacing */
+  }
+
+  .leftCard {
+    height: calc(50% - 40px);
+    margin: 20px 20px 0px 20px;
+  }
+
+  .rightCard {
+    height: calc(50% - 40px);
+    border: none;
+  }
+
+  .cardContainer {
+    margin: 0;
+    padding: 0;
+  }
+
+  .cardContent {
+    width: 100%;
+    margin-bottom: 3cm;
+
   }
 }

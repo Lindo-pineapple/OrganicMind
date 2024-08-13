@@ -1,14 +1,22 @@
 "use client";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Container, Row, Col, Button, Form, Tooltip, OverlayTrigger } from "react-bootstrap";
 import styles from "../../styles/LoginPage.module.scss";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
-import { useRouter } from "next/navigation";
-import { LoginUser } from '@/api/users';
+import { redirect, useRouter } from "next/navigation";
+import { IsAuthenticated, LoginUser } from '@/api/users';
 
 const LoginPage: React.FC = () => {
+
+  useEffect(() => {
+    const isNotAuth = IsAuthenticated();    
+    if (!isNotAuth) {
+      redirect("/main");
+    }
+  }, []);
+
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [passwordVisible, setPasswordVisible] = useState(false);

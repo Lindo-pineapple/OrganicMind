@@ -13,10 +13,18 @@ import styles from "../../styles/LoginPage.module.scss";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
-import { useRouter } from "next/navigation";
-import { RegisterUser } from "@/api/users";
+import { redirect, useRouter } from "next/navigation";
+import { IsAuthenticated, RegisterUser } from "@/api/users";
 
 const RegisterPage: React.FC = () => {
+
+  useEffect(() => {
+    const isNotAuth = IsAuthenticated();    
+    if (!isNotAuth) {
+      redirect("/main");
+    }
+  }, []);
+
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
