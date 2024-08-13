@@ -43,21 +43,49 @@
   right: 0%;
 }
 
+
 /* Mobile styles */
 @media (max-width: 767px) {
-  .mainContentWrapper {
+
+  .mainContent {
+    display: flex;
+    flex: 1;
+    width: 90%;
+    height: 100%;
+    background-color: orangered;
     margin: 0;
-    width: 100vw;
-    height: 100vh;
+    padding: 0;
   }
 
+  .mainContentWrapper {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    width: 100vw !important;
+    height: 100vh !important;
+    background-color: silver;
+    margin: 0;
+    padding: 0;
+  }
+
+  .mainContent.open {
+    display: flex;
+    flex: 1;
+    background-color: goldenrod;
+    margin: 0;
+    padding: 0;
+    display: none;
+  }
 }
 
 /* Tablet styles */
 @media (min-width: 768px) and (max-width: 991px) {
-  .mainContentWrapper {
-    margin: 0;
-    width: 100vw;
-    height: 100vh;
+  .mainContent.open {
+    display: flex;
+    flex: 1;
+    width: 60%;
+    // background-color: aqua;
+    margin-left: 27%;
+    right: 0%;
   }
 }
