@@ -157,6 +157,9 @@
   margin-right: 10px;
 }
 
+.btnText {
+  margin-left: 7px;
+}
 
 .closeButton {
   position: absolute;
@@ -167,12 +170,53 @@
   color: #6c757d; /* Adjust color if needed */
 }
 
+.bottomLine {
+  margin: 0px 10px 0px 0px;
+  color: #b6b3b3;
+  background-color: #b6b3b3;
+}
 
 /* Mobile styles */
 @media (max-width: 767px) {
   .sideMenu {
-    width: 100vw !important;
-    height: 100vh !important;
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .btnText {
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+  }
+
+  .bottomLine {
+    display: none;
+  }
+
+  .signOutButton {
+    // padding: 10px;
+    border-radius: 10px;
+    width: 94%;
+    margin: 15px 20px 20px 10px;
+    text-align: center;
+    background-color: gold;
+    color: black;
+  }
+
+  .midLine {
+    margin: 10px 10px 40px 0px;
+    display: inline-block; /* Allows the <hr> to fit its content */
+    width: 98%; /* Adjusts width relative to the parent container */
+    background-color: rgb(213, 210, 210); /* Color of the line */
+    height: 2px; /* Height of the line */
+    border: none; /* Removes default border */
+  }
+
+  .closeButton {
+    color: black;
+    font-weight: bolder;
   }
 }
 
@@ -182,4 +226,30 @@
     width: 30vw !important;
     height: 94vh; /* Full height of the viewport */
   }
+
+  .btnText {
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+  }
+
+  .signOutMenuIcon {
+    display: none;
+  }
+
+  .midLine {
+    display: none;
+  }
+
+
+  .signOutButton {
+    // padding: 10px;
+    border-radius: 10px;
+    width: 90%;
+    margin: 15px 20px 20px 10px;
+    text-align: center;
+    background-color: gold;
+    color: black;
+  }
+
 }

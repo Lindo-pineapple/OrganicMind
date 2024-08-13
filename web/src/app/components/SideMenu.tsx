@@ -9,9 +9,10 @@ import {
   FaPlus,
   FaSquare,
   FaBars,
-  FaSlidersH
+  FaSlidersH,
 } from "react-icons/fa";
 import { FiChevronsRight } from "react-icons/fi";
+import { IoClose } from "react-icons/io5";
 import { useRouter } from "next/navigation";
 import styles from "@/styles/SideMenu.module.scss";
 
@@ -32,10 +33,11 @@ const SideMenu: React.FC<SideMenuProps> = ({
 
   useEffect(() => {
     const handleResize = () => {
-      setIsTabletOrMobile(window.innerWidth <= 768);
+      setIsTabletOrMobile(window.innerWidth <= 768 || window.innerWidth <= 991);
     };
 
     window.addEventListener("resize", handleResize);
+    handleResize(); // Check initial size
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
@@ -55,7 +57,11 @@ const SideMenu: React.FC<SideMenuProps> = ({
           className={styles.closeButton}
           onClick={handleClose}
         >
-          <FaBars size={24} />
+          {isTabletOrMobile ? (
+            <IoClose className={`${styles.closeButton}`} size={24} />
+          ) : (
+            <FaBars size={24} />
+          )}
         </Button>
       </Offcanvas.Header>
       <Offcanvas.Body className={styles.offcanvasBody}>
@@ -84,7 +90,7 @@ const SideMenu: React.FC<SideMenuProps> = ({
               }`}
               active={active == "Upcoming"}
             >
-              <FiChevronsRight size={22} style={{marginRight: 5}}/>
+              <FiChevronsRight size={22} style={{ marginRight: 5 }} />
               <div className={styles.navText}>Upcoming</div>
               <span
                 className={`${styles.badge} ${
@@ -287,6 +293,7 @@ const SideMenu: React.FC<SideMenuProps> = ({
       </Offcanvas.Body>
       <div className={styles.menuFooter}>
         {/* Menu items */}
+        {isTabletOrMobile && <hr className={`${styles.midLine}`} />}
         <Button
           variant="light"
           className={styles.menuButton}
@@ -295,16 +302,23 @@ const SideMenu: React.FC<SideMenuProps> = ({
           <FaSlidersH className={`${styles.menuIcon}`} /> Settings
         </Button>
 
+        {isTabletOrMobile && <hr className={`${styles.bottomLine}`} />}
+
         <Button
           variant="light"
-          className={styles.menuButton}
+          className={`${styles.menuButton} ${styles.signOutButton} ${
+            isTabletOrMobile ? styles.signOutMobile : ""
+          }`}
           onClick={() => {
-            localStorage.removeItem('user');
-            localStorage.removeItem('token');
+            localStorage.removeItem("user");
+            localStorage.removeItem("token");
             router.push("/");
           }}
         >
-          <FaSignOutAlt className={styles.menuIcon} /> Sign Out
+          {!isTabletOrMobile && (
+            <FaSignOutAlt className={styles.signOutMenuIcon} />
+          )}{" "}
+          <span className={styles.btnText}>Sign Out</span>
         </Button>
       </div>
     </Offcanvas>
