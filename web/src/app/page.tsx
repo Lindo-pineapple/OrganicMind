@@ -68,7 +68,7 @@ const HomePage: React.FC = () => {
               >
                 Get Started{" "}
               </Button>
-              <div className="mt-3 text-center">
+              <div className={`mt-3 text-center ${styles.bottomText}`}>
                 Already have an account?{" "}
                 <a className={`${styles.link}`} href="/login">
                   Sign In
