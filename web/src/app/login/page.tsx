@@ -178,7 +178,7 @@ const LoginPage: React.FC = () => {
                   Facebook
                 </Button>
               </div>
-              <div className="mt-3 text-center">
+              <div className={`mt-3 text-center ${styles.bottomText}`}>
                 Don't have an account?{" "}
                 <a className={`${styles.link}`} href="/register">
                   Sign Up

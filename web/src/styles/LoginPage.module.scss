@@ -147,17 +147,44 @@
 
   .leftCard,
   .rightCard {
-    width: calc(100% - 40px);
-    margin: 10px 0; /* Margin for vertical spacing */
+    // width: calc(100% - 40px);
+    margin: 0; /* Margin for vertical spacing */
   }
 
   .leftCard {
-    height: calc(50% - 40px);
+    height: calc(40% - 40px);
+    width: calc(100% - 40px);
+    margin-left: 10px;
   }
 
   .rightCard {
     height: calc(50% - 40px);
+    width: calc(100% - 40px);
     border: none;
+    margin-bottom: 2cm;
+
+    .loginButton, .otherButton {
+      padding: 10px 0px;
+    }
+
+    .textInput{
+      padding: 10px 0px 10px 10px;
+      border-radius: 5px;
+    }
+
+    h1 {
+      font-size: 30px;
+      font-weight: 600;
+    }
+
+    .lineContainer {
+      height: 80%;
+    }
+
+    .bottomText {
+      font-weight: 600;
+      margin-top: 20px;
+    }
   }
 }
 
