@@ -72,35 +72,76 @@
 /* Mobile styles */
 @media (max-width: 767px) {
   .cardContainer {
-    // background-color: deepskyblue;
-    overflow: scroll;
-    flex-direction: column-reverse;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
+    display: flex;
+    flex-direction: column; /* Stack cards vertically */
+    flex-wrap: nowrap;
+    // overflow-y: hidden;
+    // overflow-x: hidden;
+    align-items: center; /* Center-align items */
+    width: 100%;
+    height: 95%;
+    padding: 20px;
+    margin: 0;
+    background-color: olivedrab;
+    border-radius: 0;
     border: none;
-    width: 90%;
-    clear: both;
+  }
+
+  .firstcardContainer {
+    display: flex;
+    flex-direction: column; /* Stack cards vertically */
+    flex-wrap: nowrap;
+    align-items: center; /* Center-align items */
+    width: 100%;
+
+    height: 58% !important;
+    min-height: 58%;
+    max-height: 60%;
+
+    margin: 0px 0px 20px 0px;
+    // background-color: darkmagenta;
+    border-radius: 0;
   }
 
   .cardBox {
     margin: 0px 0px 20px 0px;
-
-    width: 108%;
-    min-width: 100%;
-    max-width: 110%;
-
-    height: 20% !important;
-    min-height: 20%;
-    max-height: 21%;
-
     border-radius: 10px;
     clear: both !important;
-    display: flex;
-    flex-basis: 40%;
-    flex: 1;
+    overflow: hidden !important;
+    width: 100%;
+    min-width: 110%;
+    max-width: 110%;
+    height: 100% !important;
+    min-height: 100%;
+    max-height: 100%;
   }
 
+  .secondcardContainer {
+    display: inline-block;
+    width: 101%;
+
+    height: 35% !important;
+    min-height: 40%;
+    max-height: 40%;
+
+    margin: 0px 20px 0px;
+    // background-color: deeppink;
+    border-radius: 0;
+  }
+
+  .cardBoxSecond {
+    display: inline;
+    margin: 0px 20px 0px 0px;
+    border-radius: 10px;
+
+    width: 65%;
+    min-width: 65%;
+    max-width: 65%;
+
+    height: 100%;
+    min-height: 100%;
+    max-height: 100%;
+  }
 
   .addCardBox {
     display: none;
@@ -119,6 +160,7 @@
   .addIcon {
     display: flex;
     margin-left: 10px;
+    color: black !important;
   }
 }
 
