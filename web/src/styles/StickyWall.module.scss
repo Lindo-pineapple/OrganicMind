@@ -12,6 +12,9 @@
   // background-color: purple;
   margin-left: 20px;
 }
+.addIcon {
+  display: none;
+}
 
 .cardBox {
   display: flex;
@@ -90,6 +93,17 @@
   .addCardBox {
     display: none;
   }
+
+  .title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .addIcon {
+    display: flex;
+  }
 }
 
 /* Tablet styles */
@@ -104,18 +118,34 @@
     border: none;
   }
 
+  .title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .addIcon {
+    display: flex;
+    margin-right: 40px;
+  }
+
   .cardBox {
     margin: 10px;
-    height: 30%;
+
     width: 100%;
+    min-width: 98%;
+    max-width: 31%;
+
+    height: 20% !important;
+    min-height: 20%;
+    max-height: 21%;
+
     border-radius: 10px;
     clear: both !important;
-
     display: flex;
     flex-basis: 40%;
     flex: 1;
-    min-width: 98%;
-    max-width: 31%;
   }
 
   .addCardBox {

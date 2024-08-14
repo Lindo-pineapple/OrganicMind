@@ -3,6 +3,7 @@ import React from "react";
 import { Card, Container, Row } from "react-bootstrap";
 import styles from "@/styles/StickyWall.module.scss";
 import { AiOutlinePlus } from "react-icons/ai";
+import { FaPlus } from "react-icons/fa";
 
 const StickyWall = (props: { notes: NoteType[]; menuOpen: boolean }) => {
   return (
@@ -12,7 +13,10 @@ const StickyWall = (props: { notes: NoteType[]; menuOpen: boolean }) => {
         props.menuOpen ? styles.open : styles.close
       }`}
     >
-      <h1 className={`title b ${styles.title}`}>Sticky Wall</h1>
+      <h1 className={`title b ${styles.title}`}>
+        Sticky Wall
+        <FaPlus className={`icon ${styles.addIcon}`} color="grey" size={20} />
+        </h1>
       <Container fluid className={`container ${styles.cardContainer}`}>
           {props.notes.map((note) => {
             return (

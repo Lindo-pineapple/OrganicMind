@@ -80,11 +80,16 @@
 
 /* Tablet styles */
 @media (min-width: 768px) and (max-width: 991px) {
+
+  .menuToggle {
+    margin-left: 20px;
+    margin-right: -20px;
+  }
+
   .mainContent.open {
     display: flex;
     flex: 1;
     width: 60%;
-    // background-color: aqua;
     margin-left: 27%;
     right: 0%;
   }
