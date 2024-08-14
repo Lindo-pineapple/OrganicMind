@@ -72,23 +72,35 @@
 /* Mobile styles */
 @media (max-width: 767px) {
   .cardContainer {
-    background-color: deepskyblue;
+    // background-color: deepskyblue;
     overflow: scroll;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-content: center;
     justify-content: center;
     align-items: center;
     border: none;
+    width: 90%;
+    clear: both;
   }
 
   .cardBox {
-    display: block;
-    margin: 10px;
-    height: 30%;
-    width: 100%;
+    margin: 0px 0px 20px 0px;
+
+    width: 108%;
+    min-width: 100%;
+    max-width: 110%;
+
+    height: 20% !important;
+    min-height: 20%;
+    max-height: 21%;
+
     border-radius: 10px;
     clear: both !important;
+    display: flex;
+    flex-basis: 40%;
+    flex: 1;
   }
+
 
   .addCardBox {
     display: none;
@@ -99,10 +111,14 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    width: 80%;
+    margin-top: 2px;
+    margin-left: 60px;
   }
 
   .addIcon {
     display: flex;
+    margin-left: 10px;
   }
 }
 
@@ -116,6 +132,9 @@
     justify-content: center;
     align-items: center;
     border: none;
+    // background-color: aquamarine;
+    margin: auto;
+    padding: auto;
   }
 
   .title {
@@ -131,7 +150,7 @@
   }
 
   .cardBox {
-    margin: 10px;
+    margin: 0px 0px 20px 0px;
 
     width: 100%;
     min-width: 98%;
