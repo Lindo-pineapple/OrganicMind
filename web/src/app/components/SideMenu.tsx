@@ -69,7 +69,7 @@ const SideMenu: React.FC<SideMenuProps> = ({
         <div className={styles.searchBar}>
           <Form.Control
             type="text"
-            placeholder="Search"
+            placeholder=" Search"
             className={styles.searchInput}
           />
           <FaSearch className={styles.searchIcon} />

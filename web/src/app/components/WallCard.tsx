@@ -8,7 +8,7 @@ const WallCard = (props: { color: string; title: string; text: string }) => {
       className={`shadow ${styles.cardContainer}`}
       style={{ backgroundColor: `${props.color}` }}
     >
-      <Card.Body>
+      <Card.Body className={`${styles.cardBody}`}>
         <Card.Title>{props.title}</Card.Title>
         <Card.Text>
           <pre style={{ width: "100%", whiteSpace: "pre-wrap" }}>
