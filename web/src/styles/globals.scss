@@ -1,5 +1,6 @@
 // Import Bootstrap's SCSS
 @import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 // Import Tailwind CSS directives
 @tailwind base;
@@ -24,9 +25,9 @@
 $color_1: rgb(var(--foreground-rgb));
 
 body {
-  font-family: Arial, sans-serif;
   color: black;
   flex: content;
+  font-family: "Lexend", sans-serif;
 }
 
 @layer utilities {
