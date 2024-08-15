@@ -58,7 +58,7 @@ const SideMenu: React.FC<SideMenuProps> = ({
           onClick={handleClose}
         >
           {isTabletOrMobile ? (
-            <IoClose className={`${styles.closeButton}`} size={24} />
+            <IoClose color="rgb(124, 124, 124)" className={`${styles.closeButton}`} size={24} />
           ) : (
             <FaBars size={24} />
           )}
@@ -90,7 +90,7 @@ const SideMenu: React.FC<SideMenuProps> = ({
               }`}
               active={active == "Upcoming"}
             >
-              <FiChevronsRight size={22} style={{ marginRight: 5 }} />
+              <FiChevronsRight color="rgb(124, 124, 124)" size={22} style={{ marginRight: 5 }} />
               <div className={styles.navText}>Upcoming</div>
               <span
                 className={`${styles.badge} ${
@@ -112,7 +112,7 @@ const SideMenu: React.FC<SideMenuProps> = ({
               }}
               active={active == "Today"}
             >
-              <FaList className={styles.navIcon} />
+              <FaList color="rgb(124, 124, 124)" className={styles.navIcon} />
               <div className={styles.navText}>Today</div>
               <span
                 className={`${styles.badge} ${
@@ -174,7 +174,7 @@ const SideMenu: React.FC<SideMenuProps> = ({
               }}
               active={active == "Personal"}
             >
-              <FaSquare className={styles.navIcon} style={{ color: "red" }} />
+              <FaSquare className={styles.navIcon} style={{ color: "rgb(255, 107, 107)" }} />
               <div className={styles.navText}>Personal</div>
               <span
                 className={`${styles.badge} ${
@@ -221,8 +221,8 @@ const SideMenu: React.FC<SideMenuProps> = ({
               }}
               active={active == "List1"}
             >
-              <FaSquare className={styles.navIcon} style={{ color: "gold" }} />
-              <div className={styles.navText}>List1</div>
+              <FaSquare className={styles.navIcon} style={{ color: "rgb(255, 212, 59)" }} />
+              <div className={styles.navText}>List 1</div>
               <span
                 className={`${styles.badge} ${
                   active == "List1" ? styles.active : ""
@@ -263,7 +263,7 @@ const SideMenu: React.FC<SideMenuProps> = ({
               onClick={() => {
                 changePage("Filters");
               }}
-              style={{ backgroundColor: "lightblue" }}
+              style={{ backgroundColor: "rgb(209, 234, 237)" }}
             >
               Tag 1
             </Button>
@@ -274,7 +274,7 @@ const SideMenu: React.FC<SideMenuProps> = ({
               onClick={() => {
                 changePage("Filters");
               }}
-              style={{ backgroundColor: "pink" }}
+              style={{ backgroundColor: "rgb(255, 218, 218)" }}
             >
               Tag 2
             </Button>
@@ -299,7 +299,7 @@ const SideMenu: React.FC<SideMenuProps> = ({
           className={styles.menuButton}
           onClick={() => router.push("/settings")}
         >
-          <FaSlidersH className={`${styles.menuIcon}`} /> Settings
+          <FaSlidersH color="rgb(124, 124, 124)" className={`${styles.menuIcon}`} /> Settings
         </Button>
 
         {isTabletOrMobile && <hr className={`${styles.bottomLine}`} />}
@@ -316,7 +316,7 @@ const SideMenu: React.FC<SideMenuProps> = ({
           }}
         >
           {!isTabletOrMobile && (
-            <FaSignOutAlt className={styles.signOutMenuIcon} />
+            <FaSignOutAlt color="rgb(124, 124, 124)" className={styles.signOutMenuIcon} />
           )}{" "}
           <span className={styles.btnText}>Sign Out</span>
         </Button>
