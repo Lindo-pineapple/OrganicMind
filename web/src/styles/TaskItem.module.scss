@@ -10,6 +10,7 @@
   border-bottom-color: #dcdbdb;
   background-color: white;
   color: grey;
+  overflow-x: hidden;
 }
 
 .MainTask {
@@ -23,6 +24,7 @@
 .TaskDetails {
   display: flex;
   flex-direction: row;
+  overflow-x: hidden;
   margin: 10px 15px;
   padding: 0px 10px;
 }
@@ -62,6 +64,7 @@
 .SubTasksText {
     font-weight: 400;
     color: black;
+    overflow-x: hidden;
 }
 .badge {
     margin: 0px 10px;
@@ -91,4 +94,21 @@
 .seperator {
     color: #e8e8e8;
     margin-left: 5px;
+}
+
+
+/* Mobile styles */
+@media (max-width: 767px) {
+
+}
+
+/* Tablet styles */
+@media (min-width: 768px) and (max-width: 991px) {
+  .TaskDetails {
+    display: flex;
+    flex-direction: row;
+    overflow-x: hidden;
+    margin: 10px 15px;
+    padding: 0px 10px;
+  }
 }
