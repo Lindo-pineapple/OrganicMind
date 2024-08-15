@@ -137,7 +137,7 @@ const RegisterPage: React.FC = () => {
         >
           <div className={styles.cardContainer}>
             <div className={styles.cardContent}>
-              <h1 className="mb-3 left-0">Sign up</h1>
+              <h1 style={{fontWeight: '600'}}  className="mb-3 left-0">Sign up</h1>
               <Form className="w-100 mb-3" onSubmit={handleSubmit}>
                 <div className="mb-3">
                   <OverlayTrigger
@@ -187,7 +187,7 @@ const RegisterPage: React.FC = () => {
                       className={`form-control ${
                         passwordError ? "border-danger" : ""
                       }`}
-                      placeholder="password"
+                      placeholder="*****************"
                       onChange={handlePassword}
                       value={password}
                     />

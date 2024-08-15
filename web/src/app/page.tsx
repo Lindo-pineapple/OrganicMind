@@ -55,7 +55,7 @@ const HomePage: React.FC = () => {
         >
           <div className={styles.cardContainer}>
             <div className={styles.cardContent}>
-              <h1 className="mb-3 left-0">Productive Mind</h1>
+              <h1 style={{fontWeight: '600'}} className="mb-3 left-0">Productive Mind</h1>
               <p className="mb-3">
                 With only the features you need, Organic Mind is customized for
                 individuals seeking a stress-free way to stay focused on their
