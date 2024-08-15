@@ -28,14 +28,15 @@
 }
 
 .TaskCheck {
-  margin: 10px;
+  margin: 5px 10px 10px 10px;
 }
 
 .TaskText {
   margin-top: 7px;
   margin-left: 10px;
   font-size: 18px;
-  font-weight: bolder;
+  font-weight: 300;
+  color: black;
 }
 
 .TaskIcon {
@@ -47,7 +48,8 @@
     margin: 0px 10px;
 }
 .ListText {
-    font-weight: bold;
+    font-weight: 400;
+    color: black;
 }
 .ListIcon {
     margin: 0px 10px;
@@ -58,7 +60,8 @@
     margin: 0px 10px;
 }
 .SubTasksText {
-    font-weight: bold;
+    font-weight: 400;
+    color: black;
 }
 .badge {
     margin: 0px 10px;
@@ -77,9 +80,11 @@
 }
 .DateIcon {
     margin: 0px 10px;
+    color: gray;
 }
 .DateText {
-    font-weight: bold;
+    font-weight: 400;
+    color: black;
 }
 
 

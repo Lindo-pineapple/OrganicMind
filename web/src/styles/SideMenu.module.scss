@@ -32,7 +32,7 @@
   left: 10px;
   top: 50%;
   transform: translateY(-50%);
-  color: #6c757d; /* Optional: Adjust color if needed */
+  color: rgb(124, 124, 124); /* Optional: Adjust color if needed */
 }
 
 .line {
@@ -51,7 +51,7 @@
 .sectionTitle {
   font-size: 0.8rem;
   margin-bottom: 10px;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .navGroup {
@@ -71,11 +71,13 @@
 
   &.active {
     background-color: #e8e8e8; // Custom active background color
+    font-weight: bold;
   }
 }
 
 .navIcon {
   margin-right: 10px; /* Space between icon and text */
+  color: rgb(124, 124, 124);
 }
 
 .navText {
@@ -83,6 +85,11 @@
   display: flex;
   align-items: center;
   margin-left: 10px;
+  font-weight: 300;
+
+  &.active {
+    font-weight: 600;
+  }
 }
 
 .badge {
@@ -122,6 +129,7 @@
   color: black;
   text-align: center;
   font-size: small;
+  font-weight: 500;
   padding: 0; /* Remove default padding */
   background-color: transparent; /* Remove default background */
 }
@@ -129,9 +137,9 @@
 .addTag {
   display: flex;
   justify-content: space-around;
-  background-color: rgb(202, 198, 198);
+  background-color: rgb(235, 235, 235);
   width: 120px;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .menuFooter {
@@ -145,6 +153,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  font-weight: 300;
   width: 98%;
   padding: 10px 15px; /* Add padding as needed */
   margin-bottom: 10px;
@@ -167,7 +176,7 @@
   top: 10px;
   background: none; /* Remove default button background */
   border: none; /* Remove default button border */
-  color: #6c757d; /* Adjust color if needed */
+  color: rgb(124, 124, 124); /* Adjust color if needed */
 }
 
 .bottomLine {
@@ -201,7 +210,7 @@
     width: 94%;
     margin: 15px 20px 20px 10px;
     text-align: center;
-    background-color: gold;
+    background-color: rgb(255, 212, 59);
     color: black;
   }
 
@@ -248,7 +257,7 @@
     width: 90%;
     margin: 15px 20px 20px 10px;
     text-align: center;
-    background-color: gold;
+    background-color: rgb(255, 212, 59);
     color: black;
   }
 

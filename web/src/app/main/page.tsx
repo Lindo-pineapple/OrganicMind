@@ -24,25 +24,25 @@ const Main: React.FC = () => {
   const notes: NoteType[] = [
     {
       title: "Social Media",
-      color: "yellow",
+      color: "rgb(253, 242, 179)",
       text: "- Plan social content\n- Build content calendar\n- Plan promotion and distribution",
       id: 0,
     },
     {
       title: "Content Strategy",
-      color: "lightblue",
+      color: "rgb(209, 234, 237)",
       text: "Would need time to get insights (goals, personals, budget, audits), but adter, it would be good to focus on assembling my team (start with SEO specialist, then perhaps an email marketer?). Also need to brainstorm on tooling.",
       id: 1,
     },
     {
       title: "Email A/B Tests",
-      color: "pink",
+      color: "rgb(255, 218, 218)",
       text: "- Subject lines\n- Sender\n- CTA\n- Sending Times",
       id: 2,
     },
     {
       title: "Banner Ads",
-      color: "peachpuff",
+      color: "rgb(255, 212, 169)",
       text: "Notes from the workshop:\n- Sizing matters\n- Choose distinctive imagery\n- The landing page must match the display ad",
       id: 3,
     },

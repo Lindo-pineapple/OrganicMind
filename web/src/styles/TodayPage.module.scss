@@ -13,6 +13,11 @@
   margin-right: 42%;
 }
 
+.title {
+  font-weight: bold;
+  font-size: 48px;
+}
+
 .ItemContainer {
   width: 100%;
   margin: 0;
@@ -59,12 +64,22 @@
   margin-top: 7px;
   margin-left: 10px;
   font-size: 18px;
-  font-weight: bolder;
+  font-weight: 400;
 }
 
 /* Mobile styles */
 @media (max-width: 767px) {
   .title {
     margin-left: 40px;
+    font-weight: 400;
+    font-size: 38px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .title {
+    // margin-left: 40px;
+    font-weight: 400;
+    // font-size: 38px;
   }
 }
